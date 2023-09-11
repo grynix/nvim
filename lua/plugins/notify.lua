@@ -14,7 +14,7 @@ return{{
             DEBUG = "",
             TRACE = "✎",
          },
-         render = "wrapped-compact",
+         render = "compact",
          top_down = false,
 
       })
