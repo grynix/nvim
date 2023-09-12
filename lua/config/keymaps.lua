@@ -6,3 +6,33 @@
 
 
 -- vim.api.nvim_set_keymap('n', '<leader>ca', ':lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
+
+-- local format = function()
+
+
+--    require("lazyvim.plugins.lsp.format").format({ force = true })
+--  end
+-- -- Set up the autocommand to run the function when leaving insert mode
+-- vim.cmd [[ autocmd InsertLeave * lua format() ]]
+
+-- Define the global format function
+_G.format_on_leave = function()
+   require("lazyvim.plugins.lsp.format").format({ force = true })
+end
+
+-- Set up the autocommand to run the function when leaving insert mode
+vim.cmd [[ autocmd InsertLeave * lua _G.format_on_leave() ]]
+
+vim.keymap.set("n", "<F8>", "<cmd>TagbarToggle<CR>")
+--  vim.keymap.set('n', '<leader>cz', format, { noremap = true, silent = true })
+--  vim.cmd [[ autocmd InsertLeave * lua on_insert_leave() ]]
+
+vim.keymap.set("n", "<D-S-f>", vim.cmd.Ex)
+-- vim.api.nvim_set_keymap('i', '<esc>', format, { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('i', '<esc>', '<cmd>lua format_and_return_to_normal()<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, { desc = "Rename File", buffer = buffer })
+
+vim.keymap.set("n", "<D-s>", vim.cmd.w)
+vim.keymap.set("i", "<D-s>", vim.cmd.w)
+
+
