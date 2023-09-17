@@ -7,20 +7,18 @@ local function map(mode, lhs, rhs, opts)
    ---@cast keys LazyKeysHandler
    -- do not create the keymap if a lazy keys handler exists
    if not keys.active[keys.parse({ lhs, mode = mode }).id] then
-     opts = opts or {}
-     opts.silent = opts.silent ~= false
-     if opts.remap and not vim.g.vscode then
-       opts.remap = nil
-     end
-     vim.keymap.set(mode, lhs, rhs, opts)
+      opts = opts or {}
+      opts.silent = opts.silent ~= false
+      if opts.remap and not vim.g.vscode then
+         opts.remap = nil
+      end
+      vim.keymap.set(mode, lhs, rhs, opts)
    end
- end
-
+end
 
 -- vim.api.nvim_set_keymap('n', '<leader>ca', ':lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
 
 -- local format = function()
-
 
 --    require("lazyvim.plugins.lsp.format").format({ force = true })
 --  end
@@ -33,7 +31,7 @@ _G.format_on_leave = function()
 end
 
 -- Set up the autocommand to run the function when leaving insert mode
-vim.cmd [[ autocmd InsertLeave * lua _G.format_on_leave() ]]
+vim.cmd([[ autocmd InsertLeave * lua _G.format_on_leave() ]])
 
 vim.keymap.set("n", "<F8>", "<cmd>TagbarToggle<CR>")
 --  vim.keymap.set('n', '<leader>cz', format, { noremap = true, silent = true })
@@ -51,3 +49,5 @@ map("n", "<D-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
 map("n", "<D-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
 map("n", "<D-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
 map("n", "<D-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+
+map("n", ";", ":", { noremap = false, silent = true })
