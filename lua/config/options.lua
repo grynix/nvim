@@ -11,3 +11,10 @@ vim.opt.guicursor = {
 }
 vim.o.guifont = "JetBrainsMono Nerd Font Mono:h16"
 vim.g.neovide_scale_factor = 1.0
+
+vim.opt.tabstop = 3
+vim.opt.softtabstop = 3
+vim.opt.shiftwidth = 3
+vim.opt.expandtab = false
+vim.opt.autoindent = true
+vim.opt.smartindent = true
