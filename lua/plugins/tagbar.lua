@@ -1,7 +1,6 @@
-return{
+return {
+   {
 
-{
-
-   "preservim/tagbar"
-}
+      "preservim/tagbar",
+   },
 }
