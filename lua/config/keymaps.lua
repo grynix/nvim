@@ -29,9 +29,6 @@ _G.format_on_leave = function()
    require("lazyvim.plugins.lsp.format").format({ force = true })
 end
 
--- Set up the autocommand to run the function when leaving insert mode
-vim.cmd([[ autocmd InsertLeave * lua _G.format_on_leave() ]])
-
 vim.keymap.set("n", "<F8>", "<cmd>TagbarToggle<CR>")
 --  vim.keymap.set('n', '<leader>cz', format, { noremap = true, silent = true })
 --  vim.cmd [[ autocmd InsertLeave * lua on_insert_leave() ]]
