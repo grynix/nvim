@@ -33,7 +33,6 @@ vim.keymap.set("n", "<F8>", "<cmd>TagbarToggle<CR>")
 --  vim.keymap.set('n', '<leader>cz', format, { noremap = true, silent = true })
 --  vim.cmd [[ autocmd InsertLeave * lua on_insert_leave() ]]
 
-vim.keymap.set("n", "<D-S-f>", vim.cmd.Ex)
 -- vim.api.nvim_set_keymap('i', '<esc>', format, { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('i', '<esc>', '<cmd>lua format_and_return_to_normal()<CR>', { noremap = true, silent = true })
 vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, { desc = "Rename File", buffer = buffer })
@@ -53,3 +52,15 @@ map("n", "<leader>w`", "<C-W>s", { desc = "Split window below", remap = true })
 map("n", "<leader>w\\", "<C-W>v", { desc = "Split window right", remap = true })
 map("n", "<leader>`", "<C-W>s", { desc = "Split window below", remap = true })
 map("n", "<leader>\\", "<C-W>v", { desc = "Split window right", remap = true })
+
+map("n", "<D-j>", "<cmd>m .+1<CR>==", { desc = "Shift row Down." })
+map("n", "<D-k>", "<cmd>m .-2<CR>==", { desc = "Shift row Up." })
+map("i", "<D-j>", "<cmd>m .+1<CR><esc>==i", { desc = "Shift row Down." })
+map("i", "<D-k>", "<cmd>m .-2<CR><esc>==i", { desc = "Shift row Up." })
+
+map("n", "<D-CR>", "<cmd>exe 'normal! o'<CR>", { desc = "Empty line below" })
+map("i", "<C-j>", "<cmd>exe 'normal! o'<CR>", { desc = "Empty line below" })
+map("i", "<C-u>", "<cmd>exe 'normal! O'<CR>", { desc = "Empty line above" })
+
+map("n", "<D-d>", "*N//e<CR>", { desc = "Selects word" })
+map("n", "<D-f>", "*N//", { desc = "Selects word" })
