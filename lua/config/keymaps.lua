@@ -29,7 +29,7 @@ _G.format_on_leave = function()
    require("lazyvim.plugins.lsp.format").format({ force = true })
 end
 
-vim.keymap.set("n", "<F8>", "<cmd>TagbarToggle<CR>")
+vim.keymap.set("n", "<F8>", "<cmd>TagbarOpenAutoClose<CR>")
 --  vim.keymap.set('n', '<leader>cz', format, { noremap = true, silent = true })
 --  vim.cmd [[ autocmd InsertLeave * lua on_insert_leave() ]]
 
@@ -58,7 +58,7 @@ map("n", "<D-k>", "<cmd>m .-2<CR>==", { desc = "Shift row Up." })
 map("i", "<D-j>", "<cmd>m .+1<CR><esc>==i", { desc = "Shift row Down." })
 map("i", "<D-k>", "<cmd>m .-2<CR><esc>==i", { desc = "Shift row Up." })
 
-map("n", "<D-CR>", "<cmd>exe 'normal! o'<CR>", { desc = "Empty line below" })
+map("n", "<C-j>", "<cmd>exe 'normal! o'<CR>", { desc = "Empty line below" })
 map("i", "<C-j>", "<cmd>exe 'normal! o'<CR>", { desc = "Empty line below" })
 map("i", "<C-u>", "<cmd>exe 'normal! O'<CR>", { desc = "Empty line above" })
 
