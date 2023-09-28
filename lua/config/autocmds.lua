@@ -4,3 +4,4 @@
 
 -- Set up the autocommand to run the function when leaving insert mode
 vim.cmd([[ autocmd InsertLeave * lua _G.format_on_leave() ]])
+vim.cmd([[ autocmd BufLeave * silent! write]])
