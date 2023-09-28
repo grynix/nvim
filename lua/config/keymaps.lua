@@ -53,19 +53,21 @@ map("n", "<leader>w\\", "<C-W>v", { desc = "Split window right", remap = true })
 map("n", "<leader>`", "<C-W>s", { desc = "Split window below", remap = true })
 map("n", "<leader>\\", "<C-W>v", { desc = "Split window right", remap = true })
 
-map("n", "<D-j>", "<cmd>m .+1<CR>==", { desc = "Shift row Down." })
-map("n", "<D-k>", "<cmd>m .-2<CR>==", { desc = "Shift row Up." })
-map("i", "<D-j>", "<cmd>m .+1<CR><esc>==i", { desc = "Shift row Down." })
-map("i", "<D-k>", "<cmd>m .-2<CR><esc>==i", { desc = "Shift row Up." })
+map("n", "<M-Down>", "<cmd>m .+1<CR>==", { desc = "Shift row Down." })
+map("i", "<M-Down>", "<cmd>m .+1<CR><esc>==i", { desc = "Shift row Down." })
+map("n", "<M-Up>", "<cmd>m .-2<CR>==", { desc = "Shift row Up." })
+map("i", "<M-Up>", "<cmd>m .-2<CR><esc>==i", { desc = "Shift row Up." })
 
-map("n", "<C-j>", "<cmd>exe 'normal! o'<CR>", { desc = "Empty line below" })
-map("i", "<C-j>", "<cmd>exe 'normal! o'<CR>", { desc = "Empty line below" })
-map("i", "<C-u>", "<cmd>exe 'normal! O'<CR>", { desc = "Empty line above" })
+map("n", "<D-j>", "<cmd>exe 'normal! o'<CR>", { desc = "Empty line below" })
+map("i", "<D-j>", "<cmd>exe 'normal! o'<CR>", { desc = "Empty line below" })
+map("n", "<D-k>", "<cmd>exe 'normal! O'<CR>", { desc = "Empty line above" })
+map("i", "<D-k>", "<cmd>exe 'normal! O'<CR>", { desc = "Empty line above" })
 
 map("n", "<D-d>", "*N//e<CR>", { desc = "Selects word" })
 map("n", "<D-f>", "*N//", { desc = "Search for word" })
 
 map("n", "'\"", 'ciw""<esc>P', { desc = "Wraps word in quotes." })
+
 map("n", "''", "ciw''<esc>P", { desc = "Wraps word in quotes." })
 map("n", "'(", "ciw()<esc>P", { desc = "Wraps word in ()." })
 map("n", "'{", "ciw{}<esc>P", { desc = "Wraps word in {}." })
