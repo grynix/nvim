@@ -26,7 +26,7 @@ end
 
 -- Define the global format function
 _G.format_on_leave = function()
-   require("lazyvim.plugins.lsp.format").format({ force = true })
+   require("lazyvim.util").format({ force = true })
 end
 
 vim.keymap.set("n", "<F8>", "<cmd>TagbarOpenAutoClose<CR>")
