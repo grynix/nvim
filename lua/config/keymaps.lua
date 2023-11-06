@@ -77,3 +77,5 @@ map("v", ";'", "c''<esc>P", { desc = "Wraps word in quotes." })
 map("v", ";(", "c()<esc>P", { desc = "Wraps word in ()." })
 map("v", ";{", "c{}<esc>P", { desc = "Wraps word in {}." })
 map("v", ";[", "c[]<esc>P", { desc = "Wraps word in {}." })
+
+map("n", "<leader>cp", "<cmd>CreatePrettierRC<CR>", { desc = "Creates a .prettierrc file" })

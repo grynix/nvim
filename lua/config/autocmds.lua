@@ -5,3 +5,34 @@
 -- Set up the autocommand to run the function when leaving insert mode
 vim.cmd([[ autocmd InsertLeave * lua _G.format_on_leave() ]])
 vim.cmd([[ autocmd BufLeave * silent! write]])
+
+local function create_prettierrc()
+   local prettierrc_path = vim.fn.getcwd() .. "/.prettierrc"
+
+   if vim.fn.filereadable(prettierrc_path) == 1 then
+      print(".prettierrc already exists")
+      return
+   end
+
+   local default_config = [[
+{
+  "semi": false,
+  "singleQuote": false,
+  "trailingComma": "es5",
+  "printWidth": 80,
+  "tabWidth": 3,
+  "useTabs": true
+}
+]]
+
+   local file = io.open(prettierrc_path, "w")
+   if file then
+      file:write(default_config)
+      file:close()
+      print("Created .prettierrc with default configuration")
+   else
+      print("Error creating .prettierrc")
+   end
+end
+
+vim.api.nvim_create_user_command("CreatePrettierRC", create_prettierrc, {})
