@@ -3,7 +3,7 @@
 -- Add any additional autocmds here
 
 -- Set up the autocommand to run the function when leaving insert mode
-vim.cmd([[ autocmd InsertLeave * lua _G.format_on_leave() ]])
+vim.cmd([[ autocmd InsertLeave * lua _G.conform_format_on_leave() ]])
 vim.cmd([[ autocmd BufLeave * silent! write]])
 
 local function create_prettierrc()

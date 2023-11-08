@@ -25,8 +25,8 @@ end
 -- vim.cmd [[ autocmd InsertLeave * lua format() ]]
 
 -- Define the global format function
-_G.format_on_leave = function()
-   require("lazyvim.util").format({ force = true })
+_G.conform_format_on_leave = function()
+   require("conform").format({ async = true, lsp_fallback = true })
 end
 
 vim.keymap.set("n", "<F8>", "<cmd>TagbarOpenAutoClose<CR>")
