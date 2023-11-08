@@ -39,6 +39,8 @@ vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, { desc = "Rename File", buffer =
 
 vim.keymap.set("n", "<D-s>", vim.cmd.w)
 vim.keymap.set("i", "<D-s>", vim.cmd.w)
+vim.keymap.set("n", "<D-u>", vim.cmd.update)
+vim.keymap.set("i", "<D-u>", vim.cmd.update)
 
 map("n", "<D-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
 map("n", "<D-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
