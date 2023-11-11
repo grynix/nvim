@@ -19,6 +19,7 @@ return {
 		-- Define your formatters
 		formatters_by_ft = {
 			lua = { "stylua" },
+			python = { "autopep8" },
 			fish = { "fish_indent" },
 			sh = { "shfmt" },
 			javascript = { { "prettierd", "prettier" }, "eslint_d" },

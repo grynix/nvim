@@ -7,14 +7,14 @@ vim.cmd([[ autocmd InsertLeave * lua _G.conform_format_on_leave() ]])
 vim.cmd([[ autocmd BufLeave * silent! write]])
 
 local function create_prettierrc()
-   local prettierrc_path = vim.fn.getcwd() .. "/.prettierrc"
+	local prettierrc_path = vim.fn.getcwd() .. "/.prettierrc"
 
-   if vim.fn.filereadable(prettierrc_path) == 1 then
-      print(".prettierrc already exists")
-      return
-   end
+	if vim.fn.filereadable(prettierrc_path) == 1 then
+		print(".prettierrc already exists")
+		return
+	end
 
-   local default_config = [[
+	local default_config = [[
 {
   "semi": false,
   "singleQuote": false,
@@ -25,14 +25,14 @@ local function create_prettierrc()
 }
 ]]
 
-   local file = io.open(prettierrc_path, "w")
-   if file then
-      file:write(default_config)
-      file:close()
-      print("Created .prettierrc with default configuration")
-   else
-      print("Error creating .prettierrc")
-   end
+	local file = io.open(prettierrc_path, "w")
+	if file then
+		file:write(default_config)
+		file:close()
+		print("Created .prettierrc with default configuration")
+	else
+		print("Error creating .prettierrc")
+	end
 end
 
 vim.api.nvim_create_user_command("CreatePrettierRC", create_prettierrc, {})
