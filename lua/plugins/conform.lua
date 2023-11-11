@@ -1,16 +1,17 @@
 return {
 	"stevearc/conform.nvim",
-	event = { "BufWritePre" },
+	dependencies = { "mason.nvim" },
+	lazy = true,
 	cmd = { "ConformInfo" },
 	keys = {
 		{
 			-- Customize or remove this keymap to your liking
 			"<leader>cF",
 			function()
-				require("conform").format({ async = true, lsp_fallback = true })
+				require("conform").format({ formatters = { "injected" }, async = true, lsp_fallback = true })
 			end,
-			mode = "",
-			desc = "Format buffer",
+			mode = { "n", "v" },
+			desc = "Format Injected Langs",
 		},
 	},
 	-- Everything in opts will be passed to setup()
@@ -20,21 +21,21 @@ return {
 			lua = { "stylua" },
 			fish = { "fish_indent" },
 			sh = { "shfmt" },
-			javascript = { { "prettierd", "prettier" } },
-			javascriptreact = { { "prettierd", "prettier" } },
-			typescript = { { "prettierd", "prettier" } },
-			typescriptreact = { { "prettierd", "prettier" } },
-			vue = { { "prettierd", "prettier" } },
-			css = { { "prettierd", "prettier" } },
-			scss = { { "prettierd", "prettier" } },
-			less = { { "prettierd", "prettier" } },
-			html = { { "prettierd", "prettier" } },
-			json = { { "prettierd", "prettier" } },
-			jsonc = { { "prettierd", "prettier" } },
-			yaml = { { "prettierd", "prettier" } },
-			markdown = { { "prettierd", "prettier" } },
-			graphql = { { "prettierd", "prettier" } },
-			handlebars = { { "prettierd", "prettier" } },
+			javascript = { { "prettierd", "prettier" }, "eslint_d" },
+			javascriptreact = { { "prettierd", "prettier" }, "eslint_d" },
+			typescript = { { "prettierd", "prettier" }, "eslint_d" },
+			typescriptreact = { { "prettierd", "prettier" }, "eslint_d" },
+			vue = { { "prettierd", "prettier" }, "eslint_d" },
+			css = { { "prettierd", "prettier" }, "eslint_d" },
+			scss = { { "prettierd", "prettier" }, "eslint_d" },
+			less = { { "prettierd", "prettier" }, "eslint_d" },
+			html = { { "prettierd", "prettier" }, "eslint_d" },
+			json = { { "prettierd", "prettier" }, "eslint_d" },
+			jsonc = { { "prettierd", "prettier" }, "eslint_d" },
+			yaml = { { "prettierd", "prettier" }, "eslint_d" },
+			markdown = { { "prettierd", "prettier" }, "eslint_d" },
+			graphql = { { "prettierd", "prettier" }, "eslint_d" },
+			handlebars = { { "prettierd", "prettier" }, "eslint_d" },
 		},
 		-- Customize formatters
 		formatters = {
