@@ -27,11 +27,49 @@ return {
 			-- log_console_level = vim.log.levels.ERROR -- Logging level for output to console. Set to false to disable console output.
 			-- end,
 		},
-		-- {
-		-- 	"microsoft/vscode-js-debug",
-		-- 	version = "1.x",
-		-- 	build = "npm i && npm run compile vsDebugServerBundle && mv dist out",
-		-- },
+		{
+			"rcarriga/nvim-dap-ui",
+			config = {
+				layouts = {
+					{
+						elements = {
+							{
+								id = "scopes",
+								size = 0.41,
+							},
+							{
+								id = "breakpoints",
+								size = 0.20,
+							},
+							{
+								id = "stacks",
+								size = 0.20,
+							},
+							{
+								id = "watches",
+								size = 0.24,
+							},
+						},
+						position = "right",
+						size = 40,
+					},
+					{
+						elements = {
+							{
+								id = "repl",
+								size = 0.5,
+							},
+							{
+								id = "console",
+								size = 0.5,
+							},
+						},
+						position = "bottom",
+						size = 10,
+					},
+				},
+			},
+		},
 	},
 	opts = function()
 		require("dap-vscode-js").setup({
