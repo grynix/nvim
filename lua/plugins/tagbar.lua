@@ -1,6 +1,3 @@
 return {
-   {
-
-      "preservim/tagbar",
-   },
+   "preservim/tagbar",
 }

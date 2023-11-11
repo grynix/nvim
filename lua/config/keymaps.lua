@@ -2,17 +2,17 @@
 -- Add any additional keymaps here
 
 local function map(mode, lhs, rhs, opts)
-	local keys = require("lazy.core.handler").handlers.keys
-	---@cast keys LazyKeysHandler
-	-- do not create the keymap if a lazy keys handler exists
-	if not keys.active[keys.parse({ lhs, mode = mode }).id] then
-		opts = opts or {}
-		opts.silent = opts.silent ~= false
-		if opts.remap and not vim.g.vscode then
-			opts.remap = nil
-		end
-		vim.keymap.set(mode, lhs, rhs, opts)
-	end
+   local keys = require("lazy.core.handler").handlers.keys
+   ---@cast keys LazyKeysHandler
+   -- do not create the keymap if a lazy keys handler exists
+   if not keys.active[keys.parse({ lhs, mode = mode }).id] then
+      opts = opts or {}
+      opts.silent = opts.silent ~= false
+      if opts.remap and not vim.g.vscode then
+         opts.remap = nil
+      end
+      vim.keymap.set(mode, lhs, rhs, opts)
+   end
 end
 
 -- vim.api.nvim_set_keymap('n', '<leader>ca', ':lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
@@ -26,7 +26,7 @@ end
 
 -- Define the global format function
 _G.conform_format_on_leave = function()
-	require("conform").format({ async = true, lsp_fallback = true })
+   require("conform").format({ async = true, lsp_fallback = true })
 end
 
 vim.keymap.set("n", "<F8>", "<cmd>TagbarOpenAutoClose<CR>")
@@ -39,6 +39,8 @@ vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, { desc = "Rename File", buffer =
 
 vim.keymap.set("n", "<D-s>", vim.cmd.w)
 vim.keymap.set("i", "<D-s>", vim.cmd.w)
+
+-- FIX: This does work but it also triggers autosave save/updated.
 vim.keymap.set("n", "<D-u>", vim.cmd.update)
 vim.keymap.set("i", "<D-u>", vim.cmd.update)
 

@@ -1,7 +1,6 @@
 return {
    -- buffer remove
-   {
-      "echasnovski/mini.bufremove",
+   "echasnovski/mini.bufremove",
     -- stylua: ignore
     keys = function ()
     return {
@@ -10,5 +9,4 @@ return {
    }
         end
 ,
-   },
 }

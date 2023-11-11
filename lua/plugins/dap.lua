@@ -33,11 +33,10 @@ return {
 		-- 	build = "npm i && npm run compile vsDebugServerBundle && mv dist out",
 		-- },
 	},
-	config = function()
+	opts = function()
 		require("dap-vscode-js").setup({
 			debugger_path = vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter",
-
-			node_path = "/opt/homebrew/bin/node",
+			-- node_path = "/opt/homebrew/bin/node",
 			adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost", "chrome" },
 		})
 
@@ -119,6 +118,6 @@ return {
 				},
 			}
 		end
-		-- require("dap.ext.vscode").load_launchjs(nil, {})
+		require("dap.ext.vscode").load_launchjs(nil, {})
 	end,
 }
