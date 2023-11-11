@@ -43,10 +43,10 @@ vim.keymap.set("n", "<D-u>", vim.cmd.update)
 vim.keymap.set("i", "<D-u>", vim.cmd.update)
 
 -- window size change
-map("n", "<D-Up>", "<cmd>resize -2<cr>", { desc = "Increase window height" })
-map("n", "<D-Down>", "<cmd>resize +2<cr>", { desc = "Decrease window height" })
-map("n", "<D-Left>", "<cmd>vertical resize +2<cr>", { desc = "Decrease window width" })
-map("n", "<D-Right>", "<cmd>vertical resize -2<cr>", { desc = "Increase window width" })
+map("n", "<D-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+map("n", "<D-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+map("n", "<D-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+map("n", "<D-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
 -- windows
 map("n", "<leader>wb", "<C-W>p", { desc = "Other window", remap = true })

@@ -19,5 +19,3 @@ vim.opt.expandtab = false
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.clipboard = ""
-
-require("options.dap")
