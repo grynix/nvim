@@ -71,8 +71,10 @@ map("n", "<D-j>", "<cmd>exe 'normal! o'<CR>", { desc = "Empty line below" })
 map("i", "<D-j>", "<cmd>exe 'normal! o'<CR>", { desc = "Empty line below" })
 map("n", "<D-k>", "<cmd>exe 'normal! O'<CR>", { desc = "Empty line above" })
 map("i", "<D-k>", "<cmd>exe 'normal! O'<CR>", { desc = "Empty line above" })
+map("n", "<D-o>", "yyp", { desc = "Duplicate current line" })
+map("i", "<D-o>", "<ESC>yypA", { desc = "Duplicate current line" })
+map("n", "<D-p>", "viwp", { desc = "Replace with paste the current word" })
 
-map("n", "<D-d>", "*N//e<CR>", { desc = "Selects word" })
 map("n", "<D-f>", "*N//", { desc = "Search for word" })
 
 map("n", ';"', 'ciw""<esc>P', { desc = "Wraps word in quotes." })
