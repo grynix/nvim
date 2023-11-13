@@ -57,6 +57,7 @@ map("n", "<D-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window w
 map("n", "<leader>wb", "<C-W>p", { desc = "Other window", remap = true })
 map("n", "<leader>ww", "<C-W>c", { desc = "Delete window", remap = true })
 map("n", "<D-x>", "<C-W>c", { desc = "Delete window", remap = true })
+map("n", "<D-b>", "<C-W>h<C-W>c", { desc = "Close left window", remap = true })
 map("n", "<leader>w`", "<C-W>s", { desc = "Split window below", remap = true })
 map("n", "<leader>w\\", "<C-W>v", { desc = "Split window right", remap = true })
 map("n", "<leader>`", "<C-W>s", { desc = "Split window below", remap = true })
