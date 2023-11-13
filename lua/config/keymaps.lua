@@ -68,6 +68,11 @@ map("i", "<M-Down>", "<cmd>m .+1<CR><esc>==i", { desc = "Shift row Down." })
 map("n", "<M-Up>", "<cmd>m .-2<CR>==", { desc = "Shift row Up." })
 map("i", "<M-Up>", "<cmd>m .-2<CR><esc>==i", { desc = "Shift row Up." })
 
+-- Git
+map("n", "<leader>gh<D-d>", ":Gitsigns diffthis ", { desc = "Diff x commit:", remap = true })
+map("n", "<D-g>", "<cmd>Telescope git_status<CR>", { desc = "Telescope: git_status", remap = true })
+
+-- Movement
 map("n", "<D-j>", "<cmd>exe 'normal! o'<CR>", { desc = "Empty line below" })
 map("i", "<D-j>", "<cmd>exe 'normal! o'<CR>", { desc = "Empty line below" })
 map("n", "<D-k>", "<cmd>exe 'normal! O'<CR>", { desc = "Empty line above" })
