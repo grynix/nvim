@@ -38,10 +38,10 @@ vim.keymap.set("n", "<F8>", "<cmd>TagbarOpenAutoClose<CR>")
 
 -- vim.api.nvim_set_keymap('i', '<esc>', format, { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('i', '<esc>', '<cmd>lua format_and_return_to_normal()<CR>', { noremap = true, silent = true })
-vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, { desc = "Rename File", buffer = buffer })
+vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, { desc = "Rename File" })
 
-vim.keymap.set("n", "<D-s>", vim.cmd.w)
-vim.keymap.set("i", "<D-s>", vim.cmd.w)
+map("n", "<D-s>", vim.cmd.w, { desc = "Save file" })
+map("i", "<D-s>", vim.cmd.w, { desc = "Save file" })
 
 -- FIX: This does work but it also triggers autosave save/updated.
 vim.keymap.set("n", "<D-u>", vim.cmd.update)
@@ -70,28 +70,47 @@ map("i", "<M-Up>", "<cmd>m .-2<CR><esc>==i", { desc = "Shift row Up." })
 
 -- Git
 map("n", "<leader>gh<D-d>", ":Gitsigns diffthis ", { desc = "Diff x commit:", remap = true })
+map("n", "<leader>gh<D-d>", ":Gitsigns diffthis ", { desc = "Diff x commit:", remap = true })
 map("n", "<D-g>", "<cmd>Telescope git_status<CR>", { desc = "Telescope: git_status", remap = true })
+map("n", "<D-b>", "<cmd>Git blame_line<CR>", { desc = "Toggle Current Line Blame" })
+map("n", "<D-B>", "<cmd>Git toggle_current_line_blame<CR>", { desc = "Toggle Current Line Blame" })
+map(
+	"n",
+	"<leader>gd",
+	require("config.custom.mydiff").diffview_open_from_telescope,
+	{ desc = "Compare a range of commits" }
+)
 
--- Movement
+-- CMD keys
 map("n", "<D-j>", "<cmd>exe 'normal! o'<CR>", { desc = "Empty line below" })
 map("i", "<D-j>", "<cmd>exe 'normal! o'<CR>", { desc = "Empty line below" })
+
 map("n", "<D-k>", "<cmd>exe 'normal! O'<CR>", { desc = "Empty line above" })
 map("i", "<D-k>", "<cmd>exe 'normal! O'<CR>", { desc = "Empty line above" })
+
 map("n", "<D-o>", "yyp", { desc = "Duplicate current line" })
 map("i", "<D-o>", "<ESC>yypA", { desc = "Duplicate current line" })
+
+map("n", "<D-P>", "viwp", { desc = "Replace with paste the current word from regular registry" })
+map("n", "<D-p>", 'v"aiwp', { desc = "Replace with paste the current word from 'a' registry" })
 map("n", "<D-p>", "viwp", { desc = "Replace with paste the current word" })
+
+map("n", "<D-y>", '"ayiw', { desc = "Yank word into 'a' registry" })
+map("v", "<D-y>", '"ay', { desc = "Yank into 'a' registry" })
 
 map("n", "<D-f>", "*N//", { desc = "Search for word" })
 
-map("n", ';"', 'ciw""<esc>P', { desc = "Wraps word in quotes." })
-map("n", ";'", "ciw''<esc>P", { desc = "Wraps word in quotes." })
-map("n", ";(", "ciw()<esc>P", { desc = "Wraps word in ()." })
-map("n", ";{", "ciw{}<esc>P", { desc = "Wraps word in {}." })
-map("n", ";[", "ciw[]<esc>P", { desc = "Wraps word in {}." })
-map("v", ';"', 'c""<esc>P', { desc = "Wraps word in quotes." })
-map("v", ";'", "c''<esc>P", { desc = "Wraps word in quotes." })
-map("v", ";(", "c()<esc>P", { desc = "Wraps word in ()." })
-map("v", ";{", "c{}<esc>P", { desc = "Wraps word in {}." })
-map("v", ";[", "c[]<esc>P", { desc = "Wraps word in {}." })
+--
+
+map("n", '\\"', 'ciw""<esc>P', { desc = "Wraps word in quotes." })
+map("n", "\\'", "ciw''<esc>P", { desc = "Wraps word in quotes." })
+map("n", "\\(", "ciw()<esc>P", { desc = "Wraps word in ()." })
+map("n", "\\{", "ciw{}<esc>P", { desc = "Wraps word in {}." })
+map("n", "\\[", "ciw[]<esc>P", { desc = "Wraps word in {}." })
+map("v", '\\"', 'c""<esc>P', { desc = "Wraps in quotes." })
+map("v", "\\'", "c''<esc>P", { desc = "Wraps in quotes." })
+map("v", "\\(", "c()<esc>P", { desc = "Wraps in ()." })
+map("v", "\\{", "c{}<esc>P", { desc = "Wraps in {}." })
+map("v", "\\[", "c[]<esc>P", { desc = "Wraps in {}." })
 
 map("n", "<leader>cp", "<cmd>CreatePrettierRC<CR>", { desc = "Creates a .prettierrc file" })
