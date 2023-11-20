@@ -80,8 +80,8 @@ map(
 	{ desc = "Compare a range of commits" }
 )
 map("n", "<D-d>", "<cmd>DiffviewOpen<CR>", { desc = "Open diffview for not commited files" })
-map("n", "<leader>ghh", "<cmd>DiffviewFileHistory %", { desc = "Open file history for current file" })
-map("n", "<leader>ghH", "<cmd>DiffviewFileHistory", { desc = "Open file history for project" })
+map("n", "<leader>ghh", "<cmd>DiffviewFileHistory %<CR>", { desc = "Open file history for current file" })
+map("n", "<leader>ghH", "<cmd>DiffviewFileHistory<CR>", { desc = "Open file history for project" })
 
 -- CMD keys
 map("n", "<D-j>", "<cmd>exe 'normal! o'<CR>", { desc = "Empty line below" })
