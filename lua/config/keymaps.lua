@@ -32,7 +32,7 @@ _G.conform_format_on_leave = function()
 	require("conform").format({ async = true, lsp_fallback = true })
 end
 
-vim.keymap.set("n", "<F8>", "<cmd>TagbarOpenAutoClose<CR>")
+vim.keymap.set("n", "<F8>", "<cmd>AerialNavToggle<CR>")
 --  vim.keymap.set('n', '<leader>cz', format, { noremap = true, silent = true })
 --  vim.cmd [[ autocmd InsertLeave * lua on_insert_leave() ]]
 
