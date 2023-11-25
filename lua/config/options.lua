@@ -19,3 +19,6 @@ vim.opt.expandtab = false
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.clipboard = ""
+
+vim.opt.scrolloff = 5
+vim.g.VM_theme = "purplegray"

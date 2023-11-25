@@ -85,7 +85,7 @@ map(
 	require("config.custom.mydiff").diffview_open_from_telescope_branches,
 	{ desc = "Compare a to a branch" }
 )
-map("n", "<D-d>", "<cmd>DiffviewOpen<CR>", { desc = "Open diffview for not commited files" })
+map("n", "<D-D>", "<cmd>DiffviewOpen<CR>", { desc = "Open diffview for not commited files" })
 map("n", "<leader>ghh", "<cmd>DiffviewFileHistory %<CR>", { desc = "Open file history for current file" })
 map("n", "<leader>ghH", "<cmd>DiffviewFileHistory<CR>", { desc = "Open file history for project" })
 
@@ -106,7 +106,9 @@ map("n", "<D-p>", "viwp", { desc = "Replace with paste the current word" })
 map("n", "<D-y>", '"ayiw', { desc = "Yank word into 'a' registry" })
 map("v", "<D-y>", '"ay', { desc = "Yank into 'a' registry" })
 
+map("n", "<D-d>", "*N//", { desc = "Search for word" })
 map("n", "<D-f>", "*N//", { desc = "Search for word" })
+map("i", "<esc>", "<esc><cmd>LazyFormat<CR>", { desc = "Escape plus format" })
 
 --
 
