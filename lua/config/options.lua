@@ -21,4 +21,4 @@ vim.opt.smartindent = true
 vim.opt.clipboard = ""
 
 vim.opt.scrolloff = 5
-vim.g.VM_theme = "purplegray"
+vim.g.VM_theme = "paper"
