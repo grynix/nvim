@@ -99,15 +99,15 @@ map("i", "<D-k>", "<cmd>exe 'normal! O'<CR>", { desc = "Empty line above" })
 map("n", "<D-o>", "yyp", { desc = "Duplicate current line" })
 map("i", "<D-o>", "<ESC>yypA", { desc = "Duplicate current line" })
 
-map("n", "<D-P>", "viwp", { desc = "Replace with paste the current word from regular registry" })
-map("n", "<D-p>", 'v"aiwp', { desc = "Replace with paste the current word from 'a' registry" })
-map("n", "<D-p>", "viwp", { desc = "Replace with paste the current word" })
+map("n", "<D-p>", "viwp", { desc = "Replace the current word with content from regular registry" })
 
+-- 'a' registry
+map("n", "<D-t>", 'v"aiwp', { desc = "Replace with paste the current word from 'a' registry" })
 map("n", "<D-y>", '"ayiw', { desc = "Yank word into 'a' registry" })
 map("v", "<D-y>", '"ay', { desc = "Yank into 'a' registry" })
 
-map("n", "<D-d>", "*N//", { desc = "Search for word" })
-map("n", "<D-f>", "*N//<CR>", { desc = "Search for word" })
+map("n", "<D-d>", "viw", { desc = "Search for word" })
+map("n", "<D-f>", "*N//", { desc = "Search for word", remap = true })
 map("i", "<esc>", "<esc><cmd>LazyFormat<CR>", { desc = "Escape plus format" })
 
 --

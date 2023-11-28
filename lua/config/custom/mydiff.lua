@@ -5,7 +5,7 @@ local action_state = require("telescope.actions.state")
 
 M.diffview_open_from_telescope_commits = function()
 	require("telescope.builtin").git_commits({
-		prompt_title = "Select commit to compare",
+		prompt_title = "Select commit to compare HEAD to",
 		attach_mappings = function(bufnr, map)
 			map("n", "<CR>", function()
 				local selection = action_state.get_selected_entry()
@@ -23,7 +23,7 @@ end
 
 M.diffview_open_from_telescope_branches = function()
 	require("telescope.builtin").git_branches({
-		prompt_title = "Select commit to compare",
+		prompt_title = "Select branch to compare HEAD to",
 		attach_mappings = function(bufnr, map)
 			map("n", "<CR>", function()
 				local selection = action_state.get_selected_entry()
