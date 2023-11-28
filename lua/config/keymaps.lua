@@ -106,7 +106,8 @@ map("n", "<D-t>", 'v"aiwp', { desc = "Replace with paste the current word from '
 map("n", "<D-y>", '"ayiw', { desc = "Yank word into 'a' registry" })
 map("v", "<D-y>", '"ay', { desc = "Yank into 'a' registry" })
 
-map("n", "<D-d>", "viw", { desc = "Search for word" })
+-- map("n", "<D-d>", "V", { desc = "Search for word" })
+-- map("v", "<D-d>", "", { desc = "Search for word" })
 map("n", "<D-f>", "*N//", { desc = "Search for word", remap = true })
 map("i", "<esc>", "<esc><cmd>LazyFormat<CR>", { desc = "Escape plus format" })
 
