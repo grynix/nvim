@@ -102,7 +102,7 @@ map("i", "<D-o>", "<ESC>yypA", { desc = "Duplicate current line" })
 map("n", "<D-p>", "viwp", { desc = "Replace the current word with content from regular registry" })
 
 -- 'a' registry
-map("n", "<D-t>", 'v"aiwp', { desc = "Replace with paste the current word from 'a' registry" })
+map("n", "<D-t>", 'v"aiwp', { desc = "Paste the current word from 'a' registry" })
 map("n", "<D-y>", '"ayiw', { desc = "Yank word into 'a' registry" })
 map("v", "<D-y>", '"ay', { desc = "Yank into 'a' registry" })
 

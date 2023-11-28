@@ -29,7 +29,7 @@ return {
 		},
 		{
 			"rcarriga/nvim-dap-ui",
-			config = {
+			opts = {
 				layouts = {
 					{
 						elements = {
