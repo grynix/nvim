@@ -38,7 +38,6 @@ vim.keymap.set("n", "<F8>", "<cmd>AerialNavToggle<CR>")
 
 -- vim.api.nvim_set_keymap('i', '<esc>', format, { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('i', '<esc>', '<cmd>lua format_and_return_to_normal()<CR>', { noremap = true, silent = true })
-vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, { desc = "Rename File" })
 
 map("n", "<D-s>", vim.cmd.w, { desc = "Save file" })
 map("i", "<D-s>", vim.cmd.w, { desc = "Save file" })
@@ -106,8 +105,21 @@ map("n", "<D-t>", 'v"aiwp', { desc = "Paste the current word from 'a' registry" 
 map("n", "<D-y>", '"ayiw', { desc = "Yank word into 'a' registry" })
 map("v", "<D-y>", '"ay', { desc = "Yank into 'a' registry" })
 
--- map("n", "<D-d>", "V", { desc = "Search for word" })
--- map("v", "<D-d>", "", { desc = "Search for word" })
+-- Spectre / word search
+map("n", "<D-d>g", function()
+	require("spectre").open_visual({ select_word = true })
+end, { desc = "Search current word globally" })
+
+map("n", "<D-d>l", function()
+	require("spectre").open_file_search({ select_word = true })
+end, { desc = "Search current word in current file" })
+
+map("n", "<D-d>d", function()
+	require("spectre").toggle()
+end, { desc = "Toggle word search" })
+
+map("v", "<D-d>", ":'<,'>lua require('spectre').open_visual()<CR>", { desc = "Search selected word globally" })
+
 map("n", "<D-f>", "*N//", { desc = "Search for word", remap = true })
 map("i", "<esc>", "<esc><cmd>LazyFormat<CR>", { desc = "Escape plus format" })
 
