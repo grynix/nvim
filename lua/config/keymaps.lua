@@ -106,21 +106,21 @@ map("n", "<D-y>", '"ayiw', { desc = "Yank word into 'a' registry" })
 map("v", "<D-y>", '"ay', { desc = "Yank into 'a' registry" })
 
 -- Spectre / word search
-map("n", "<D-d>g", function()
+map("n", "<D-f>g", function()
 	require("spectre").open_visual({ select_word = true })
 end, { desc = "Search current word globally" })
 
-map("n", "<D-d>l", function()
+map("n", "<D-f>l", function()
 	require("spectre").open_file_search({ select_word = true })
 end, { desc = "Search current word in current file" })
 
-map("n", "<D-d>d", function()
+map("n", "<D-f>d", function()
 	require("spectre").toggle()
 end, { desc = "Toggle word search" })
 
-map("v", "<D-d>", ":'<,'>lua require('spectre').open_visual()<CR>", { desc = "Search selected word globally" })
+map("v", "<D-f>", ":'<,'>lua require('spectre').open_visual()<CR>", { desc = "Search selected word globally" })
 
-map("n", "<D-f>", "*N//", { desc = "Search for word", remap = true })
+map("n", "<D-d>", "*N//", { desc = "Search for word", remap = true })
 map("i", "<esc>", "<esc><cmd>LazyFormat<CR>", { desc = "Escape plus format" })
 
 --
@@ -137,3 +137,5 @@ map("v", "\\{", "c{}<esc>P", { desc = "Wraps in {}." })
 map("v", "\\[", "c[]<esc>P", { desc = "Wraps in {}." })
 
 map("n", "<leader>cp", "<cmd>CreatePrettierRC<CR>", { desc = "Creates a .prettierrc file" })
+
+map("n", "<leader>p", "<cmd>let @+ = expand('%:p')<CR>", { desc = "get current file's path" })
