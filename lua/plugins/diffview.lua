@@ -538,4 +538,5 @@ return {
 			},
 		})
 	end,
+	lazy = true,
 }
