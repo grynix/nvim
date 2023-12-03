@@ -139,3 +139,6 @@ map("v", "\\[", "c[]<esc>P", { desc = "Wraps in {}." })
 map("n", "<leader>cp", "<cmd>CreatePrettierRC<CR>", { desc = "Creates a .prettierrc file" })
 
 map("n", "<leader>p", "<cmd>let @+ = expand('%:p')<CR>", { desc = "get current file's path" })
+
+map("n", "<S-PageUp>", "<C-u>", { desc = "up" })
+map("n", "<S-PageDown>", "<C-d>", { desc = "dwob" })
