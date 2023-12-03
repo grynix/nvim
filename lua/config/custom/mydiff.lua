@@ -28,7 +28,7 @@ M.diffview_open_from_telescope_branches = function()
 			map("n", "<CR>", function()
 				local selection = action_state.get_selected_entry()
 				actions.close(bufnr)
-				vim.cmd("DiffviewOpen " .. selection.value .. "..HEAD")
+				vim.cmd("DiffviewOpen " .. selection.value .. "...HEAD")
 			end)
 			return true
 		end,
