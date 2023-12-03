@@ -121,7 +121,7 @@ end, { desc = "Toggle word search" })
 map("v", "<D-f>", ":'<,'>lua require('spectre').open_visual()<CR>", { desc = "Search selected word globally" })
 
 map("n", "<D-d>", "*N//", { desc = "Search for word", remap = true })
-map("i", "<esc>", "<esc><cmd>LazyFormat<CR>", { desc = "Escape plus format" })
+map("i", "<esc>", "<esc><cmd>FormatIfNotTelescopeBuffer<CR>", { desc = "Escape plus format" })
 
 --
 

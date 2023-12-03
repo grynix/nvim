@@ -35,4 +35,12 @@ local function create_prettierrc()
 	end
 end
 
+local function formatNotTelescope()
+	local bufType = vim.bo.filetype
+	if bufType ~= "TelescopePrompt" then
+		vim.cmd("LazyFormat")
+	end
+end
+
 vim.api.nvim_create_user_command("CreatePrettierRC", create_prettierrc, {})
+vim.api.nvim_create_user_command("FormatIfNotTelescopeBuffer", formatNotTelescope, {})
