@@ -126,11 +126,10 @@ return {
 					},
 					TreesitterContextBottom = {
 						sp = colors.base,
-						bg = colors.surface1,
+						-- bg = colors.surface1,
 					},
 					TreesitterContextLineNumber = {
-						fg = colors.base,
-						bg = colors.surface1,
+						bg = colors.base,
 					},
 				}
 			end,
