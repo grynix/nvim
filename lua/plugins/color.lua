@@ -119,6 +119,19 @@ return {
 					NeoTreeVertSplit = { fg = colors.base, bg = inactive_bg },
 					NeoTreeStatusLineNC = { fg = colors.mantle, bg = colors.mantle },
 					--
+					-- treesitter_context
+					TreesitterContext = {
+						sp = colors.base,
+						bg = colors.surface1,
+					},
+					TreesitterContextBottom = {
+						sp = colors.base,
+						bg = colors.surface1,
+					},
+					TreesitterContextLineNumber = {
+						fg = colors.base,
+						bg = colors.surface1,
+					},
 				}
 			end,
 		},
