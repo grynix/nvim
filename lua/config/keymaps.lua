@@ -142,3 +142,4 @@ map("n", "<leader>p", "<cmd>let @+ = expand('%:p')<CR>", { desc = "get current f
 
 map("n", "<S-PageUp>", "<C-u>", { desc = "up" })
 map("n", "<S-PageDown>", "<C-d>", { desc = "dwob" })
+
