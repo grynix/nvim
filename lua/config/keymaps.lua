@@ -68,6 +68,7 @@ map("n", "<M-Up>", "<cmd>m .-2<CR>==", { desc = "Shift row Up." })
 map("i", "<M-Up>", "<cmd>m .-2<CR><esc>==i", { desc = "Shift row Up." })
 
 -- Git
+map("n", "<leader>gg", "<cmd>LazyGit<CR>", { desc = "LazyGit" })
 map("n", "<leader>gh<D-d>", ":Gitsigns diffthis ", { desc = "Diff x commit:", remap = true })
 map("n", "<D-g>", "<cmd>Telescope git_status initial_mode=normal<CR>", { desc = "Telescope: git_status", remap = true })
 map("n", "<D-b>", "<cmd>Git blame_line<CR>", { desc = "Toggle Current Line Blame" })
@@ -109,18 +110,19 @@ map("v", "<D-y>", '"ay', { desc = "Yank into 'a' registry" })
 map("n", "<D-f>g", function()
 	require("spectre").open_visual({ select_word = true })
 end, { desc = "Search current word globally" })
-
 map("n", "<D-f>l", function()
 	require("spectre").open_file_search({ select_word = true })
 end, { desc = "Search current word in current file" })
-
 map("n", "<D-f>d", function()
 	require("spectre").toggle()
 end, { desc = "Toggle word search" })
+map("n", "<D-f>b", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Telescope in current buffer" })
 
 map("v", "<D-f>", ":'<,'>lua require('spectre').open_visual()<CR>", { desc = "Search selected word globally" })
 
 map("n", "<D-d>", "*N//", { desc = "Search for word", remap = true })
+map("n", "<leader>sb", "<cmd>Telescope buffers initial_mode=normal<CR>", { desc = "Search in buffers" })
+
 map("i", "<esc>", "<esc><cmd>FormatIfNotTelescopeBuffer<CR>", { desc = "Escape plus format" })
 
 --
@@ -142,4 +144,3 @@ map("n", "<leader>p", "<cmd>let @+ = expand('%:p')<CR>", { desc = "get current f
 
 map("n", "<S-PageUp>", "<C-u>", { desc = "up" })
 map("n", "<S-PageDown>", "<C-d>", { desc = "dwob" })
-

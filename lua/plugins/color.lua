@@ -8,7 +8,7 @@ return {
 		"catppuccin/nvim",
 		lazy = true,
 		name = "catppuccin",
-		compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
+		compile = { enabled = true, path = vim.fn.stdpath("cache") .. "/catppuccin", suffix = "_compiled" },
 		opts = {
 			flavour = "mocha",
 			integrations = {
