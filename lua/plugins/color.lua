@@ -118,7 +118,7 @@ return {
 					NeoTreeTabSeparatorInactive = { fg = inactive_bg, bg = inactive_bg },
 					NeoTreeVertSplit = { fg = colors.base, bg = inactive_bg },
 					NeoTreeStatusLineNC = { fg = colors.mantle, bg = colors.mantle },
-					--
+
 					-- treesitter_context
 					TreesitterContext = {
 						sp = colors.base,
@@ -131,6 +131,10 @@ return {
 					TreesitterContextLineNumber = {
 						bg = colors.base,
 					},
+
+					-- LazyGit
+					LazyGitFloat = { bg = "black" },
+					LazyGitBorder = { bg = "black" },
 				}
 			end,
 		},
