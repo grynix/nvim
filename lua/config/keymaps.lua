@@ -144,3 +144,15 @@ map("n", "<leader>p", "<cmd>let @+ = expand('%:p')<CR>", { desc = "get current f
 
 map("n", "<S-PageUp>", "<C-u>", { desc = "up" })
 map("n", "<S-PageDown>", "<C-d>", { desc = "dwob" })
+
+map("n", "<D-+>", function()
+	vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.05
+end, { desc = "Increase font size" })
+
+map("n", "<D-->", function()
+	vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.05
+end, { desc = "Desrease font size" })
+
+map("n", "<leader>u=", function()
+	vim.g.neovide_scale_factor = 1.0
+end, { desc = "Reset font size" })
