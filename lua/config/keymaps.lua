@@ -68,8 +68,8 @@ map("n", "<M-Up>", "<cmd>m .-2<CR>==", { desc = "Shift row Up." })
 map("i", "<M-Up>", "<cmd>m .-2<CR><esc>==i", { desc = "Shift row Up." })
 
 -- Git
-map("n", "<leader>gg", "<cmd>LazyGit<CR>", { desc = "LazyGit" })
-map("n", "<leader>gh<D-d>", ":Gitsigns diffthis ", { desc = "Diff x commit:", remap = true })
+map("n", "<leager>gg", "<cmd>LazyGit<CR>", { desc = "LazyGit" })
+map("n", "<leader>gdf", "<cmd>diffthis<CR>", { desc = "Diff x commit:", remap = true })
 map("n", "<D-g>", "<cmd>Telescope git_status initial_mode=normal<CR>", { desc = "Telescope: git_status", remap = true })
 map("n", "<D-b>", "<cmd>Git blame_line<CR>", { desc = "Toggle Current Line Blame" })
 map("n", "<D-B>", "<cmd>Git toggle_current_line_blame<CR>", { desc = "Toggle Current Line Blame" })
@@ -87,7 +87,7 @@ map(
 )
 map("n", "<leader>gdd", "<cmd>DiffviewOpen<CR>", { desc = "Open diffview for not commited files" })
 map("n", "<leader>ghh", "<cmd>DiffviewFileHistory %<CR>", { desc = "Open file history for current file" })
-map("n", "<leader>ghH", "<cmd>DiffviewFileHistory<CR>", { desc = "Open file history for project" })
+map("n", "<leader>gdh", "<cmd>DiffviewFileHistory<CR>", { desc = "Open file history for project" })
 
 -- CMD keys
 map("n", "<D-j>", "<cmd>exe 'normal! o'<CR>", { desc = "Empty line below" })
@@ -99,12 +99,16 @@ map("i", "<D-k>", "<cmd>exe 'normal! O'<CR>", { desc = "Empty line above" })
 map("n", "<D-o>", "yyp", { desc = "Duplicate current line" })
 map("i", "<D-o>", "<ESC>yypA", { desc = "Duplicate current line" })
 
-map("n", "<D-p>", "viwp", { desc = "Replace the current word with content from regular registry" })
+map("n", "<D-p>", "i<CR><CR><UP><C-o>P<ESC>", { desc = "enter", remap = true })
+map("n", "J", "i<CR><CR><UP><TAB><C-o>", { desc = "enter", remap = true })
 
 -- 'a' registry
 map("n", "<D-t>", 'v"aiwp', { desc = "Paste the current word from 'a' registry" })
 map("n", "<D-y>", '"ayiw', { desc = "Yank word into 'a' registry" })
 map("v", "<D-y>", '"ay', { desc = "Yank into 'a' registry" })
+
+map("n", "x", '"bx', { desc = "x into 'b' buffer", remap = true })
+map("n", "X", "viwp", { desc = "Replace the current word with content from regular registry", remap = true })
 
 -- Spectre / word search
 map("n", "<D-f>g", function()
@@ -138,7 +142,7 @@ map("v", "\\(", "c()<esc>P", { desc = "Wraps in ()." })
 map("v", "\\{", "c{}<esc>P", { desc = "Wraps in {}." })
 map("v", "\\[", "c[]<esc>P", { desc = "Wraps in {}." })
 
-map("n", "<leader>cp", "<cmd>CreatePrettierRC<CR>", { desc = "Creates a .prettierrc file" })
+map("n", "<leader>uP", "<cmd>CreatePrettierRC<CR>", { desc = "Creates a .prettierrc file" })
 
 map("n", "<leader>p", "<cmd>let @+ = expand('%:p')<CR>", { desc = "get current file's path" })
 
