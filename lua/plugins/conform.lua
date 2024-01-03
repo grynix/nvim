@@ -22,6 +22,7 @@ return {
 			python = { "autopep8" },
 			fish = { "fish_indent" },
 			sh = { "shfmt" },
+			go = { { "gofumpt", "gofmt" }, { "goimports-reviser", "goimports" } },
 			javascript = { { "prettierd", "prettier" }, "eslint_d" },
 			javascriptreact = { { "prettierd", "prettier" }, "eslint_d" },
 			typescript = { { "prettierd", "prettier" }, "eslint_d" },

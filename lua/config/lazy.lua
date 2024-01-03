@@ -16,6 +16,7 @@ require("lazy").setup({
 		-- { import = "lazyvim.plugins.extras.lang.json" },
 		-- { import = "lazyvim.plugins.extras.ui.mini-animate" },
 		-- import/override with your plugins
+		{ import = "lazyvim.plugins.extras.lang.go" },
 		{ import = "lazyvim.plugins.extras.dap.core" },
 		{ import = "plugins" },
 	},
@@ -30,7 +31,6 @@ require("lazy").setup({
 	},
 	install = {
 		missing = true,
-		colorscheme = { "tokyonight" },
 	},
 	rtp = {
 		-- disable some rtp plugins

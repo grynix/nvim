@@ -25,6 +25,7 @@ end
 -- vim.cmd [[ autocmd InsertLeave * lua format() ]]
 
 -- Define the global format function
+-- HACK: is this still being used?
 _G.conform_format_on_leave = function()
 	-- NOTE: if this is changed to:
 	-- require("lazyvim.util").format({ force = true })
@@ -107,8 +108,9 @@ map("n", "<D-t>", 'v"aiwp', { desc = "Paste the current word from 'a' registry" 
 map("n", "<D-y>", '"ayiw', { desc = "Yank word into 'a' registry" })
 map("v", "<D-y>", '"ay', { desc = "Yank into 'a' registry" })
 
-map("n", "x", '"bx', { desc = "x into 'b' buffer", remap = true })
+map("n", "x", '"_x', { desc = "x into 'b' buffer", remap = true })
 map("n", "X", "viwp", { desc = "Replace the current word with content from regular registry", remap = true })
+map("v", "x", '"_x', { desc = "x into 'b' buffer", remap = true })
 
 -- Spectre / word search
 map("n", "<D-f>g", function()
@@ -132,15 +134,17 @@ map("i", "<esc>", "<esc><cmd>FormatIfNotTelescopeBuffer<CR>", { desc = "Escape p
 --
 
 map("n", '\\"', 'ciw""<esc>P', { desc = "Wraps word in quotes." })
-map("n", "\\'", "ciw''<esc>P", { desc = "Wraps word in quotes." })
-map("n", "\\(", "ciw()<esc>P", { desc = "Wraps word in ()." })
-map("n", "\\{", "ciw{}<esc>P", { desc = "Wraps word in {}." })
-map("n", "\\[", "ciw[]<esc>P", { desc = "Wraps word in {}." })
 map("v", '\\"', 'c""<esc>P', { desc = "Wraps in quotes." })
-map("v", "\\'", "c''<esc>P", { desc = "Wraps in quotes." })
+map("n", "\\(", "ciw()<esc>P", { desc = "Wraps word in ()." })
 map("v", "\\(", "c()<esc>P", { desc = "Wraps in ()." })
+map("n", "\\'", "ciw''<esc>P", { desc = "Wraps word in quotes." })
+map("v", "\\'", "c''<esc>P", { desc = "Wraps in quotes." })
+map("n", "\\{", "ciw{}<esc>P", { desc = "Wraps word in {}." })
 map("v", "\\{", "c{}<esc>P", { desc = "Wraps in {}." })
+map("n", "\\[", "ciw[]<esc>P", { desc = "Wraps word in {}." })
 map("v", "\\[", "c[]<esc>P", { desc = "Wraps in {}." })
+map("n", "\\`", "ciw``<esc>P", { desc = "Wraps word in ``." })
+map("v", "\\`", "c``<esc>P", { desc = "Wraps in ``." })
 
 map("n", "<leader>uP", "<cmd>CreatePrettierRC<CR>", { desc = "Creates a .prettierrc file" })
 

@@ -37,7 +37,7 @@ end
 
 local function formatNotTelescope()
 	local bufType = vim.bo.filetype
-	if bufType ~= "TelescopePrompt" then
+	if bufType ~= "TelescopePrompt" and bufType ~= "go" then
 		vim.cmd("LazyFormat")
 	end
 end

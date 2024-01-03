@@ -1,3 +1,3 @@
 # Help
 
-To trigger hover/intellisense use 'K'
+## To trigger hover/intellisense use 'K'
