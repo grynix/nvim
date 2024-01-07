@@ -2,7 +2,7 @@ return {
 	"folke/todo-comments.nvim",
 	dependencies = { "nvim-lua/plenary.nvim" },
 	keys = {
-		{ "<F12>", "<cmd>TodoTelescope cwd=" .. vim.loop.cwd() .. "<cr>", desc = "Todo Telescope" },
+		{ "<F12>", "<cmd>TodoTelescope initial_mode=normal cwd=" .. vim.loop.cwd() .. "<cr>", desc = "Todo Telescope" },
 	},
 	opts = {
 

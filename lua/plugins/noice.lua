@@ -7,5 +7,4 @@ return {
 		},
 	},
 	throttle = 900 / 30,
-	enabled = false,
 }

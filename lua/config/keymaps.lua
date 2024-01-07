@@ -101,6 +101,10 @@ map("n", "<D-o>", "yyp", { desc = "Duplicate current line" })
 map("i", "<D-o>", "<ESC>yypA", { desc = "Duplicate current line" })
 
 map("n", "<D-p>", "i<CR><CR><UP><C-o>P<ESC>", { desc = "enter", remap = true })
+
+map("v", "<C-p>", "p", { desc = "Paste and change the register for what we replaced", remap = true })
+map("v", "p", '"_xP', { desc = "Paste without changing the register", remap = true })
+
 map("n", "J", "i<CR><CR><UP><TAB><C-o>", { desc = "enter", remap = true })
 
 -- 'a' registry
