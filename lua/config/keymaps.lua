@@ -168,3 +168,5 @@ end, { desc = "Desrease font size" })
 map("n", "<leader>u=", function()
 	vim.g.neovide_scale_factor = 1.0
 end, { desc = "Reset font size" })
+
+map("n", "<leader>fd", "<cmd>Oil<CR>", { desc = "Open oil" })
