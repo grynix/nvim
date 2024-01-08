@@ -10,7 +10,7 @@ return {
 				oil.select({ close = true }, function()
 					local bufType = vim.bo.filetype
 					if bufType ~= "oil" then
-						require("neo-tree.command").execute({ action = "show", dir = vim.loop.cwd() })
+						require("neo-tree.command").execute({ action = "show", dir = require("lazyvim.util").root() })
 					end
 				end)
 			end,

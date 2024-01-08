@@ -170,6 +170,6 @@ map("n", "<leader>u=", function()
 end, { desc = "Reset font size" })
 
 map("n", "cd", function()
-	require("neo-tree.command").execute({ action = "close", dir = vim.loop.cwd() })
+	require("neo-tree.command").execute({ action = "close" })
 	require("oil").open(vim.loop.cwd())
 end, { desc = "Open oil" })
