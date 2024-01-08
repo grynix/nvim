@@ -100,7 +100,7 @@ map("i", "<D-k>", "<cmd>exe 'normal! O'<CR>", { desc = "Empty line above" })
 map("n", "<D-o>", "yyp", { desc = "Duplicate current line" })
 map("i", "<D-o>", "<ESC>yypA", { desc = "Duplicate current line" })
 
-map("n", "<D-p>", "i<CR><CR><UP><C-o>P<ESC>", { desc = "enter", remap = true })
+map("n", "<D-p>", "i<CR><CR><UP><C-o>p<ESC>", { desc = "enter", remap = true })
 
 map("v", "<C-p>", "p", { desc = "Paste and change the register for what we replaced", remap = true })
 map("v", "p", '"_xP', { desc = "Paste without changing the register", remap = true })
@@ -169,4 +169,7 @@ map("n", "<leader>u=", function()
 	vim.g.neovide_scale_factor = 1.0
 end, { desc = "Reset font size" })
 
-map("n", "<leader>fd", "<cmd>Oil<CR>", { desc = "Open oil" })
+map("n", "cd", function()
+	require("neo-tree.command").execute({ action = "close", dir = vim.loop.cwd() })
+	require("oil").open(vim.loop.cwd())
+end, { desc = "Open oil" })
