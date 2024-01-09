@@ -99,8 +99,9 @@ map("i", "<D-k>", "<cmd>exe 'normal! O'<CR>", { desc = "Empty line above" })
 
 map("n", "<D-o>", "yyp", { desc = "Duplicate current line" })
 map("i", "<D-o>", "<ESC>yypA", { desc = "Duplicate current line" })
+map("v", "<D-o>", "d2p", { desc = "Duplicate current line" })
 
-map("n", "<D-p>", "i<CR><CR><UP><C-o>p<ESC>", { desc = "enter", remap = true })
+map("n", "<D-p>", "a<CR><CR><UP><C-o>p<ESC>==", { desc = "enter", remap = true })
 
 map("v", "<C-p>", "p", { desc = "Paste and change the register for what we replaced", remap = true })
 map("v", "p", '"_xP', { desc = "Paste without changing the register", remap = true })
@@ -133,7 +134,7 @@ map("v", "<D-f>", ":'<,'>lua require('spectre').open_visual()<CR>", { desc = "Se
 map("n", "<D-d>", "*N//", { desc = "Search for word", remap = true })
 map("n", "<leader>sb", "<cmd>Telescope buffers initial_mode=normal<CR>", { desc = "Search in buffers" })
 
-map("i", "<esc>", "<esc><cmd>FormatIfNotTelescopeBuffer<CR>", { desc = "Escape plus format" })
+map("n", "<esc>", "<cmd>LazyFormat<CR>", { desc = "Escape plus format" })
 
 --
 
@@ -149,6 +150,52 @@ map("n", "\\[", "ciw[]<esc>P", { desc = "Wraps word in {}." })
 map("v", "\\[", "c[]<esc>P", { desc = "Wraps in {}." })
 map("n", "\\`", "ciw``<esc>P", { desc = "Wraps word in ``." })
 map("v", "\\`", "c``<esc>P", { desc = "Wraps in ``." })
+
+local function getInput()
+	local char = vim.fn.getchar()
+	if type(char) == "number" then
+		char = vim.fn.nr2char(char)
+	end
+
+	if char == '"' then
+		char = '\\"'
+	end
+	return char
+end
+
+map("n", "\\<F2>", function()
+	local char = getInput()
+
+	if char then
+		vim.api.nvim_command('exe "normal! ciw' .. char .. char .. '\\<Esc>P"')
+	else
+		print("No input captured")
+	end
+end, { desc = "wrap/surround word in something" })
+
+map("v", "\\<F2>", function()
+	local char = getInput()
+
+	if char then
+		vim.api.nvim_command('exe "normal! c' .. char .. char .. '\\<Esc>P"')
+	else
+		print("No input captured")
+	end
+end, { desc = "wrap/surround selected in something" })
+
+map("n", "<Leader>\\", function()
+	local char = getInput()
+
+	if char then
+		vim.api.nvim_command('exe "normal! di' .. char .. '\\<Esc>"')
+		local char = getInput()
+		if char then
+			vim.api.nvim_command('exe "normal! \\"_xh\\"_x' .. char .. char .. '\\<Esc>P"')
+		end
+	else
+		print("No input captured")
+	end
+end, { desc = "wrap/surround selected in something" })
 
 map("n", "<leader>uP", "<cmd>CreatePrettierRC<CR>", { desc = "Creates a .prettierrc file" })
 
@@ -169,7 +216,7 @@ map("n", "<leader>u=", function()
 	vim.g.neovide_scale_factor = 1.0
 end, { desc = "Reset font size" })
 
-map("n", "cd", function()
+map("n", "<leader>cd", function()
 	require("neo-tree.command").execute({ action = "close" })
 	require("oil").open(vim.loop.cwd())
 end, { desc = "Open oil" })
