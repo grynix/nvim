@@ -92,16 +92,16 @@ map("n", "<leader>gdh", "<cmd>DiffviewFileHistory<CR>", { desc = "Open file hist
 
 -- CMD keys
 map("n", "<D-j>", "<cmd>exe 'normal! o'<CR>", { desc = "Empty line below" })
-map("i", "<D-j>", "<cmd>exe 'normal! o'<CR>", { desc = "Empty line below" })
+map("i", "<D-j>", "<C-o>o", { desc = "Empty line below" })
 
 map("n", "<D-k>", "<cmd>exe 'normal! O'<CR>", { desc = "Empty line above" })
 map("i", "<D-k>", "<cmd>exe 'normal! O'<CR>", { desc = "Empty line above" })
 
 map("n", "<D-o>", "yyp", { desc = "Duplicate current line" })
 map("i", "<D-o>", "<ESC>yypA", { desc = "Duplicate current line" })
-map("v", "<D-o>", "d2p", { desc = "Duplicate current line" })
+map("v", "<D-o>", "d2P", { desc = "Duplicate current line" })
 
-map("n", "<D-p>", "a<CR><CR><UP><C-o>p<ESC>==", { desc = "enter", remap = true })
+map("n", "<D-p>", "a<CR><UP><C-o>p<ESC><cmd>LazyFormat<CR>", { desc = "Paste after in new line", remap = true })
 
 map("v", "<C-p>", "p", { desc = "Paste and change the register for what we replaced", remap = true })
 map("v", "p", '"_xP', { desc = "Paste without changing the register", remap = true })
