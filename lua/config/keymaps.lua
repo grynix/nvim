@@ -134,7 +134,7 @@ map("v", "<D-f>", ":'<,'>lua require('spectre').open_visual()<CR>", { desc = "Se
 map("n", "<D-d>", "*N//", { desc = "Search for word", remap = true })
 map("n", "<leader>sb", "<cmd>Telescope buffers initial_mode=normal<CR>", { desc = "Search in buffers" })
 
-map("n", "<esc>", "<cmd>LazyFormat<CR>", { desc = "Escape plus format" })
+map("n", "<esc>", "<esc><cmd>LazyFormat<CR>", { desc = "Escape plus format" })
 
 --
 
@@ -215,8 +215,3 @@ end, { desc = "Desrease font size" })
 map("n", "<leader>u=", function()
 	vim.g.neovide_scale_factor = 1.0
 end, { desc = "Reset font size" })
-
-map("n", "<leader>cd", function()
-	require("neo-tree.command").execute({ action = "close" })
-	require("oil").open(vim.loop.cwd())
-end, { desc = "Open oil" })
