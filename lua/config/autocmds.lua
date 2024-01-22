@@ -44,7 +44,8 @@ end
 
 local function cd()
 	require("neo-tree.command").execute({ action = "close" })
-	require("oil").open(vim.loop.cwd())
+	local current_folder = vim.fn.expand("%:p:h")
+	require("oil").open(current_folder)
 end
 
 _G.IsPresentate = false
