@@ -2,27 +2,11 @@
 -- Add any additional keymaps here
 
 local function map(mode, lhs, rhs, opts)
-	local keys = require("lazy.core.handler").handlers.keys
-	---@cast keys LazyKeysHandler
-	-- do not create the keymap if a lazy keys handler exists
-	if not keys.active[keys.parse({ lhs, mode = mode }).id] then
-		opts = opts or {}
-		opts.silent = opts.silent ~= false
-		if opts.remap and not vim.g.vscode then
-			opts.remap = nil
-		end
-		vim.keymap.set(mode, lhs, rhs, opts)
-	end
+	vim.keymap.set(mode, lhs, rhs, opts)
 end
 
--- vim.api.nvim_set_keymap('n', '<leader>ca', ':lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
-
--- local format = function()
-
---    require("lazyvim.plugins.lsp.format").format({ force = true })
---  end
--- -- Set up the autocommand to run the function when leaving insert mode
--- vim.cmd [[ autocmd InsertLeave * lua format() ]]
+map("n", "j", "j", { silent = true })
+map("n", "k", "k", { silent = true })
 
 -- Define the global format function
 -- HACK: is this still being used?

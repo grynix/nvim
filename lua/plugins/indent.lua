@@ -13,7 +13,7 @@ return {
 				-- |MiniIndentscope.gen_animation| for builtin options. To disable
 				animation = require("mini.indentscope").gen_animation.linear({
 					easing = "in",
-					duration = 10,
+					duration = 8,
 					unit = "step",
 				}),
 
