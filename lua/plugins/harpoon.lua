@@ -72,6 +72,24 @@ return {
 						end
 					end
 
+					local function is_buffer_loaded_by_path(target_path)
+						-- Normalize the target path
+						local target_path_normalized = vim.fn.fnamemodify(target_path, ":p")
+						-- Get a list of all buffers
+						local buffers = vim.api.nvim_list_bufs()
+						for _, buf in ipairs(buffers) do
+							-- Get the full path of the buffer
+							local buf_path = vim.api.nvim_buf_get_name(buf)
+							-- Normalize the buffer path
+							local buf_path_normalized = vim.fn.fnamemodify(buf_path, ":p")
+							-- Check if the buffer is loaded and the paths match
+							if vim.api.nvim_buf_is_loaded(buf) and buf_path_normalized == target_path_normalized then
+								return true
+							end
+						end
+						return false
+					end
+
 					local cmdParam = list_item.value
 
 					if startsWithBracket(cmdParam) then
@@ -80,9 +98,10 @@ return {
 
 					if checkForLineNumbers(cmdParam) then
 						vim.cmd("e +0" .. cmdParam)
-					else
+					elseif is_buffer_loaded_by_path(cmdParam) then
 						vim.cmd("buffer " .. cmdParam)
-						print("list_item", list_item)
+					else
+						vim.cmd("e " .. cmdParam)
 					end
 				end,
 			},
