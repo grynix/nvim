@@ -37,6 +37,8 @@ map("n", "<D-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
 map("n", "<D-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
 map("n", "<D-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
+map("n", "gb", "%", { desc = "Go to bracket. Acts as %" })
+
 -- windows
 map("n", "<leader>wb", "<C-W>p", { desc = "Other window", remap = true })
 map("n", "<leader>ww", "<C-W>c", { desc = "Delete window", remap = true })
@@ -54,7 +56,7 @@ map("i", "<M-Up>", "<cmd>m .-2<CR><esc>==i", { desc = "Shift row Up." })
 
 -- Git
 map("n", "<leager>gg", "<cmd>LazyGit<CR>", { desc = "LazyGit" })
-map("n", "<leader>gdf", "<cmd>diffthis<CR>", { desc = "Diff x commit:", remap = true })
+map("n", "<leader>gdt", "<cmd>diffthis<CR>", { desc = "Diff this", remap = true })
 map("n", "<D-g>", "<cmd>Telescope git_status initial_mode=normal<CR>", { desc = "Telescope: git_status", remap = true })
 map("n", "<D-b>", "<cmd>Git blame_line<CR>", { desc = "Toggle Current Line Blame" })
 map("n", "<D-B>", "<cmd>Git toggle_current_line_blame<CR>", { desc = "Toggle Current Line Blame" })
@@ -71,8 +73,8 @@ map(
 	{ desc = "Compare a to a branch" }
 )
 map("n", "<leader>gdd", "<cmd>DiffviewOpen<CR>", { desc = "Open diffview for not commited files" })
-map("n", "<leader>ghh", "<cmd>DiffviewFileHistory %<CR>", { desc = "Open file history for current file" })
-map("n", "<leader>gdh", "<cmd>DiffviewFileHistory<CR>", { desc = "Open file history for project" })
+map("n", "<leader>ghf", "<cmd>DiffviewFileHistory %<CR>", { desc = "Open file history for current file" })
+map("n", "<leader>ghh", "<cmd>DiffviewFileHistory<CR>", { desc = "Open file history for project" })
 
 -- CMD keys
 map("n", "<D-j>", "<cmd>exe 'normal! o'<CR>", { desc = "Empty line below" })
@@ -85,21 +87,21 @@ map("n", "<D-o>", "yyp", { desc = "Duplicate current line" })
 map("i", "<D-o>", "<ESC>yypA", { desc = "Duplicate current line" })
 map("v", "<D-o>", "d2P", { desc = "Duplicate current line" })
 
-map("n", "<D-p>", "a<CR><UP><C-o>p<ESC><cmd>LazyFormat<CR>", { desc = "Paste after in new line", remap = true })
+map("n", "<D-p>", "a<CR><CR><UP><C-o>p<ESC><cmd>LazyFormat<CR>", { desc = "Paste after in new line" })
 
-map("v", "<C-p>", "p", { desc = "Paste and change the register for what we replaced", remap = true })
-map("v", "p", '"_xP', { desc = "Paste without changing the register", remap = true })
+map("v", "<C-p>", "p", { desc = "Paste and change the register for what we replaced" })
+map("v", "p", '"_xP', { desc = "Paste without changing the register" })
 
-map("n", "J", "i<CR><CR><UP><TAB><C-o>", { desc = "enter", remap = true })
+map("n", "J", "i<CR><CR><UP><TAB><C-o>", { desc = "enter" })
 
 -- 'a' registry
 map("n", "<D-t>", 'v"aiwp', { desc = "Paste the current word from 'a' registry" })
 map("n", "<D-y>", '"ayiw', { desc = "Yank word into 'a' registry" })
 map("v", "<D-y>", '"ay', { desc = "Yank into 'a' registry" })
 
-map("n", "x", '"_x', { desc = "x into 'b' buffer", remap = true })
-map("n", "X", "viwp", { desc = "Replace the current word with content from regular registry", remap = true })
-map("v", "x", '"_x', { desc = "x into 'b' buffer", remap = true })
+map("n", "x", '"_x', { desc = "x into 'b' buffer" })
+map("n", "X", "viwp", { desc = "Replace the current word with content from regular registry" })
+map("v", "x", '"_x', { desc = "x into 'b' buffer" })
 
 -- Spectre / word search
 map("n", "<D-f>g", function()
@@ -168,18 +170,34 @@ map("v", "\\<F2>", function()
 end, { desc = "wrap/surround selected in something" })
 
 map("n", "<Leader>\\", function()
+	local function evaluateBracket(str)
+		local brackets = { "()", "{}", "[]", "<>" }
+		for _, v in ipairs(brackets) do
+			if string.sub(v, 1, 1) == str then
+				return true, v
+			end
+		end
+		return false, str
+	end
+
 	local char = getInput()
 
 	if char then
-		vim.api.nvim_command('exe "normal! di' .. char .. '\\<Esc>"')
-		local char = getInput()
-		if char then
-			vim.api.nvim_command('exe "normal! \\"_xh\\"_x' .. char .. char .. '\\<Esc>P"')
+		local newChar = getInput()
+		vim.api.nvim_command('exe "normal! di' .. char .. '"')
+		if newChar then
+			local isBracket, bracket = evaluateBracket(newChar)
+
+			if isBracket then
+				vim.api.nvim_command('exe "normal! va' .. char .. '\\"_da' .. bracket .. '\\<esc>P"')
+			else
+				vim.api.nvim_command('exe "normal! va' .. char .. '\\"_da' .. newChar .. newChar .. '\\<esc>P"')
+			end
 		end
 	else
 		print("No input captured")
 	end
-end, { desc = "wrap/surround selected in something" })
+end, { desc = "delete wrap around and wrap inside something else" })
 
 map("n", "<leader>uP", "<cmd>CreatePrettierRC<CR>", { desc = "Creates a .prettierrc file" })
 
