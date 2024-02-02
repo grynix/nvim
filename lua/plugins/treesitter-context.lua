@@ -1,6 +1,4 @@
 return {
-	-- Your other plugins and configurations...
-	-- Add and configure nvim-treesitter-context
 	"nvim-treesitter/nvim-treesitter-context",
 	opts = {
 		enable = true,

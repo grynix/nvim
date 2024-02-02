@@ -212,7 +212,6 @@ return {
 					console = "integratedTerminal",
 				},
 			}
-			 
 		end
 		-- require("dap.ext.vscode").load_launchjs(".vscode/launch.json", {
 		-- 	["pwa-node"] = js_based_languages,

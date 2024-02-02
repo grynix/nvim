@@ -1,5 +1,4 @@
 return {
-	-- buffer remove
 	"echasnovski/mini.bufremove",
 	keys = function()
 		return {
