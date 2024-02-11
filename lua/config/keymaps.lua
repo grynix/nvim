@@ -188,9 +188,9 @@ map("n", "<Leader>\\<F2>", function()
 			local isBracket, bracket = evaluateBracket(newChar)
 
 			if isBracket then
-				vim.api.nvim_command('exe "normal! va' .. char .. '\\"_da' .. bracket .. '\\<esc>P"')
+				vim.api.nvim_command('exe "normal! va' .. char .. '\\"_c' .. bracket .. '\\<esc>P"')
 			else
-				vim.api.nvim_command('exe "normal! va' .. char .. '\\"_da' .. newChar .. newChar .. '\\<esc>P"')
+				vim.api.nvim_command('exe "normal! va' .. char .. '\\"_c' .. newChar .. newChar .. '\\<esc>P"')
 			end
 		end
 	else
