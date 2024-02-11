@@ -119,7 +119,7 @@ map("v", "<D-f>", ":'<,'>lua require('spectre').open_visual()<CR>", { desc = "Se
 map("n", "<D-d>", "*N//", { desc = "Search for word", remap = true })
 map("n", "<leader>sb", "<cmd>Telescope buffers initial_mode=normal<CR>", { desc = "Search in buffers" })
 
-map("n", "<esc>", "<esc><cmd>LazyFormat<CR>", { desc = "Escape plus format" })
+map("n", "<esc>", "<cmd>LazyFormat<CR>", { desc = "Format document" })
 
 --
 
