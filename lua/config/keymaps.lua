@@ -24,12 +24,8 @@ vim.keymap.set("n", "<F8>", "<cmd>AerialNavToggle<CR>")
 -- vim.api.nvim_set_keymap('i', '<esc>', format, { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('i', '<esc>', '<cmd>lua format_and_return_to_normal()<CR>', { noremap = true, silent = true })
 
-map("n", "<D-s>", vim.cmd.w, { desc = "Save file" })
-map("i", "<D-s>", vim.cmd.w, { desc = "Save file" })
-
--- FIX: This does work but it also triggers autosave save/updated.
-vim.keymap.set("n", "<D-u>", vim.cmd.update)
-vim.keymap.set("i", "<D-u>", vim.cmd.update)
+map("n", "<D-s>", "<cmd>w<cr>", { desc = "Save file" })
+map("i", "<D-s>", "<cmd>w<cr>", { desc = "Save file" })
 
 -- window size change
 map("n", "<D-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
@@ -107,12 +103,15 @@ map("v", "x", '"_x', { desc = "x into 'b' buffer" })
 map("n", "<D-f>g", function()
 	require("spectre").open_visual({ select_word = true })
 end, { desc = "Search current word globally" })
+
 map("n", "<D-f>l", function()
 	require("spectre").open_file_search({ select_word = true })
 end, { desc = "Search current word in current file" })
+
 map("n", "<D-f>d", function()
 	require("spectre").toggle()
 end, { desc = "Toggle word search" })
+
 map("n", "<D-f>b", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Telescope in current buffer" })
 
 map("v", "<D-f>", ":'<,'>lua require('spectre').open_visual()<CR>", { desc = "Search selected word globally" })
@@ -169,7 +168,7 @@ map("v", "\\<F2>", function()
 	end
 end, { desc = "wrap/surround selected in something" })
 
-map("n", "<Leader>\\", function()
+map("n", "<Leader>\\<F2>", function()
 	local function evaluateBracket(str)
 		local brackets = { "()", "{}", "[]", "<>" }
 		for _, v in ipairs(brackets) do
