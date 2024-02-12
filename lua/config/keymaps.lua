@@ -51,8 +51,9 @@ map("n", "<M-Up>", "<cmd>m .-2<CR>==", { desc = "Shift row Up." })
 map("i", "<M-Up>", "<cmd>m .-2<CR><esc>==i", { desc = "Shift row Up." })
 
 -- Git
-map("n", "<leager>gg", "<cmd>LazyGit<CR>", { desc = "LazyGit" })
+map("n", "<leader>gg", "<cmd>LazyGit<CR>", { desc = "LazyGit" })
 map("n", "<leader>gdt", "<cmd>diffthis<CR>", { desc = "Diff this", remap = true })
+map("n", "<leader>gf", "<cmd>Neotree float git_status<CR>", { desc = "Telescope: git_status" })
 map("n", "<D-g>", "<cmd>Telescope git_status initial_mode=normal<CR>", { desc = "Telescope: git_status", remap = true })
 map("n", "<D-b>", "<cmd>Git blame_line<CR>", { desc = "Toggle Current Line Blame" })
 map("n", "<D-B>", "<cmd>Git toggle_current_line_blame<CR>", { desc = "Toggle Current Line Blame" })
