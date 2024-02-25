@@ -74,6 +74,7 @@ return {
 				},
 			},
 			custom_highlights = function(colors)
+				local O = require("catppuccin").options
 				local active_bg = O.transparent_background and colors.none or colors.baseMantle
 				local inactive_bg = O.transparent_background and colors.none or colors.baseMantle
 				return {
