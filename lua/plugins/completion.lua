@@ -34,6 +34,7 @@ return {
 					end,
 				}),
 				sources = cmp.config.sources({
+					{ name = "codeium" },
 					{ name = "luasnip", keyword_length = 2 },
 					{ name = "nvim_lsp", keyword_length = 3 },
 					{
@@ -54,6 +55,7 @@ return {
 				view = {
 					entries = { name = "custom", selection_order = "near_cursor" },
 				},
+
 				formatting = {
 					format = function(_, item)
 						local icons = require("lazyvim.config").icons.kinds
@@ -65,7 +67,7 @@ return {
 				},
 				experimental = {
 					ghost_text = {
-						hl_group = "CmpGhostText",
+						hl_group = "Comment",
 					},
 				},
 				sorting = {
