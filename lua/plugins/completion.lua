@@ -1,7 +1,6 @@
 return {
 	{
-		" rsh7th/nvim-cmp",
-		version = false, -- last release is way too old
+		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",
 		dependencies = {
 			"hrsh7th/cmp-nvim-lsp",
