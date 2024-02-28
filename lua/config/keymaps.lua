@@ -51,7 +51,8 @@ map("n", "<M-Up>", "<cmd>m .-2<CR>==", { desc = "Shift row Up." })
 map("i", "<M-Up>", "<cmd>m .-2<CR><esc>==i", { desc = "Shift row Up." })
 
 -- Git
-map("n", "<leader>gg", "<cmd>LazyGit<CR>", { desc = "LazyGit" })
+map("n", "<leader>gg", "<cmd>Neogit<CR>", { desc = "Neogit" })
+map("n", "git", "<cmd>LazyGit<CR>", { desc = "LazyGit" })
 map("n", "<leader>gdt", "<cmd>diffthis<CR>", { desc = "Diff this", remap = true })
 map("n", "<leader>gf", "<cmd>Neotree float git_status<CR>", { desc = "Neotree: git_status" })
 map("n", "<D-g>", "<cmd>Telescope git_status initial_mode=normal<CR>", { desc = "Telescope: git_status", remap = true })
@@ -121,6 +122,7 @@ map("n", "<D-d>", "*N//", { desc = "Search for word", remap = true })
 map("n", "<leader>sb", "<cmd>Telescope buffers initial_mode=normal<CR>", { desc = "Search in buffers" })
 
 map("n", "<F4>", "<cmd>LazyFormat<CR>", { desc = "Format document" })
+map("i", "<F4>", "<cmd>LazyFormat<CR>", { desc = "Format document" })
 
 --
 
@@ -198,6 +200,12 @@ map("n", "<Leader>\\<F2>", function()
 		print("No input captured")
 	end
 end, { desc = "delete wrap around and wrap inside something else" })
+
+map("n", "<leader>\\\\", function()
+	local char = getInput()
+	vim.api.nvim_command('exe "normal! di' .. char .. '"')
+	vim.api.nvim_command('exe "normal! va' .. char .. '\\"_d' .. 'p"')
+end, { desc = "Remove sorrounding characters" })
 
 map("n", "<leader>uP", "<cmd>CreatePrettierRC<CR>", { desc = "Creates a .prettierrc file" })
 
