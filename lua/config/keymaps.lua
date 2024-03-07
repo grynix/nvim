@@ -52,7 +52,7 @@ map("i", "<M-Up>", "<cmd>m .-2<CR><esc>==i", { desc = "Shift row Up." })
 
 -- Git
 map("n", "<leader>gg", "<cmd>Neogit<CR>", { desc = "Neogit" })
-map("n", "git", "<cmd>LazyGit<CR>", { desc = "LazyGit" })
+map("n", "<leader>git", "<cmd>LazyGit<CR>", { desc = "LazyGit" })
 map("n", "<leader>gdt", "<cmd>diffthis<CR>", { desc = "Diff this", remap = true })
 map("n", "<leader>gf", "<cmd>Neotree float git_status<CR>", { desc = "Neotree: git_status" })
 map("n", "<D-g>", "<cmd>Telescope git_status initial_mode=normal<CR>", { desc = "Telescope: git_status", remap = true })
