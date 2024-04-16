@@ -6,6 +6,8 @@ if vim.g.neovide then
 	vim.keymap.set("i", "<D-v>", '<C-o>"+P') -- Paste insert mode
 	vim.g.neovide_scroll_animation_length = 0
 	vim.g.neovide_cursor_animation_length = 0
+else
+	vim.keymap.set("v", "<D-y>", '"+y') -- Copy
 end
 
 require("config.lazy")

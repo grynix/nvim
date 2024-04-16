@@ -85,7 +85,7 @@ map("n", "<M-o>", "yyp", { desc = "Duplicate current line" })
 map("i", "<M-o>", "<ESC>yypA", { desc = "Duplicate current line" })
 map("v", "<M-o>", "d2P", { desc = "Duplicate current line" })
 
-map("n", "<M-p>", "a<CR><CR><UP><C-o>p<ESC><cmd>LazyFormat<CR>", { desc = "Paste after in new line" })
+-- map("n", "<M-p>", "a<CR><CR><UP><C-o>p<ESC><cmd>LazyFormat<CR>", { desc = "Paste after in new line" })
 
 map("v", "<C-p>", "p", { desc = "Paste and change the register for what we replaced" })
 map("v", "p", '"_xP', { desc = "Paste without changing the register" })
