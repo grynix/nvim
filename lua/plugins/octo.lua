@@ -1,6 +1,5 @@
 return {
 	"pwntester/octo.nvim",
-	lazy = true,
 	requires = {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope.nvim",

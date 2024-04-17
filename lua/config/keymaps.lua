@@ -227,3 +227,6 @@ end, { desc = "Desrease font size" })
 map("n", "<leader>u=", function()
 	vim.g.neovide_scale_factor = 1.0
 end, { desc = "Reset font size" })
+
+-- map to '<leader>y'
+vim.keymap.set("n", "<leader>y", "<cmd>YankBank<CR>", { noremap = true })
