@@ -94,8 +94,8 @@ map("n", "J", "i<CR><CR><UP><TAB><C-o>", { desc = "enter" })
 
 -- 'a' registry
 map("n", "<M-t>", 'v"aiwp', { desc = "Paste the current word from 'a' registry" })
-map("n", "<M-y>", '"ayiw', { desc = "Yank word into 'a' registry" })
-map("v", "<M-y>", '"ay', { desc = "Yank into 'a' registry" })
+-- map("n", "<M-y>", '"ayiw', { desc = "Yank word into 'a' registry" })
+-- map("v", "<M-y>", '"ay', { desc = "Yank into 'a' registry" })
 
 map("n", "x", '"_x', { desc = "x into 'b' buffer" })
 map("n", "X", "viwp", { desc = "Replace the current word with content from regular registry" })
@@ -230,3 +230,10 @@ end, { desc = "Reset font size" })
 
 -- map to '<leader>y'
 vim.keymap.set("n", "<leader>y", "<cmd>YankBank<CR>", { noremap = true })
+
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>tw",
+	"<cmd>lua require('neotest').run.run({ jestCommand = 'jest --watch ' })<cr>",
+	{}
+)
