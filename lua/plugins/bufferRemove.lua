@@ -3,7 +3,7 @@ return {
 	keys = function()
 		return {
 			{
-				"<D-w>",
+				"<M-w>",
 				function()
 					require("mini.bufremove").delete(0, false)
 				end,
