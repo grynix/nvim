@@ -24,15 +24,6 @@ vim.keymap.set("n", "<F8>", "<cmd>AerialNavToggle<CR>")
 -- vim.api.nvim_set_keymap('i', '<esc>', format, { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('i', '<esc>', '<cmd>lua format_and_return_to_normal()<CR>', { noremap = true, silent = true })
 
-map("n", "<M-s>", "<cmd>w<cr>", { desc = "Save file" })
-map("i", "<M-s>", "<cmd>w<cr>", { desc = "Save file" })
-
--- window size change
-map("n", "<M-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
-map("n", "<M-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
-map("n", "<M-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
-map("n", "<M-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
-
 map("n", "gb", "%", { desc = "Go to bracket. Acts as %" })
 
 -- windows
