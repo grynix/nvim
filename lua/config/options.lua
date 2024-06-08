@@ -23,3 +23,5 @@ vim.opt.clipboard = ""
 
 vim.opt.scrolloff = 5
 vim.g.VM_theme = "paper"
+
+vim.opt.conceallevel = 0
