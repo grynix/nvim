@@ -237,3 +237,11 @@ vim.api.nvim_set_keymap(
 	"<cmd>lua require('neotest').run.run({ jestCommand = 'jest --watch ' })<cr>",
 	{}
 )
+
+require("config.custom.path-switcher")
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>pp",
+	"<cmd>lua require('config.custom.path-switcher').switch_path()<cr>",
+	{ noremap = true, silent = true }
+)

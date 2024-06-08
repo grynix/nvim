@@ -75,3 +75,4 @@ vim.api.nvim_create_user_command("CreatePrettierRC", create_prettierrc, {})
 vim.api.nvim_create_user_command("FormatIfNotTelescopeBuffer", formatNotTelescope, {})
 vim.api.nvim_create_user_command("Cd", cd, {})
 vim.api.nvim_create_user_command("PresentationToggle", PresentationToggle, {})
+
