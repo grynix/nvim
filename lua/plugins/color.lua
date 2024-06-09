@@ -52,7 +52,7 @@ return {
 					peach = "#FF9E64",
 					yellow = "#f5c462",
 					green = "#96d382",
-					-- teal = "#0DB9D7", -- we'll need this in the future
+					-- teal = "#0DB9D7", -- we'll need this in the future; future me: the color?
 					teal = "#1ABC9C",
 					sky = "#91d7e3",
 					sapphire = "#68bae0",
@@ -131,6 +131,9 @@ return {
 					-- LazyGit
 					LazyGitFloat = { bg = "black" },
 					LazyGitBorder = { bg = "black" },
+
+					-- Lsp
+					LspInlayHint = { bg = colors.surface0, fg = colors.overlay1, style = { "italic" } },
 				}
 			end,
 		},

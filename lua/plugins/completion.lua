@@ -67,7 +67,7 @@ return {
 				},
 				experimental = {
 					ghost_text = {
-						hl_group = "Comment",
+						hl_group = "CmpGhostText",
 					},
 				},
 				sorting = {
