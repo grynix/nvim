@@ -102,21 +102,9 @@ map("n", "X", "viwp", { desc = "Replace the current word with content from regul
 map("v", "x", '"_x', { desc = "x into 'b' buffer" })
 
 -- Spectre / word search
-map("n", "<M-f>g", function()
-	require("spectre").open_visual({ select_word = true })
-end, { desc = "Search current word globally" })
-
-map("n", "<M-f>l", function()
-	require("spectre").open_file_search({ select_word = true })
-end, { desc = "Search current word in current file" })
-
-map("n", "<M-f>d", function()
-	require("spectre").toggle()
-end, { desc = "Toggle word search" })
+map("n", "<M-f>g", "<cmd>GrugFar<cr>", { desc = "Search current word globally" })
 
 map("n", "<M-f>b", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Telescope in current buffer" })
-
-map("v", "<M-f>", ":'<,'>lua require('spectre').open_visual()<CR>", { desc = "Search selected word globally" })
 
 map("n", "<M-d>", "*N//", { desc = "Search for word", remap = true })
 map("n", "<leader>sb", "<cmd>Telescope buffers initial_mode=normal<CR>", { desc = "Search in buffers" })

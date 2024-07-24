@@ -108,7 +108,7 @@ return {
 		})
 
 		vim.keymap.set("n", "<Leader><CR>", function()
-			harpoon:list("mark"):append()
+			harpoon:list("mark"):add()
 		end)
 
 		vim.keymap.set("n", "<F2>", function()
