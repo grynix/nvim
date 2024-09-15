@@ -228,7 +228,7 @@ vim.api.nvim_set_keymap(
 require("config.custom.path-switcher")
 vim.api.nvim_set_keymap(
 	"n",
-	"<leader>pp",
+	"ge",
 	"<cmd>lua require('config.custom.path-switcher').switch_path()<cr>",
 	{ noremap = true, silent = true }
 )

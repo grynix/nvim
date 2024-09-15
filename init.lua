@@ -10,4 +10,6 @@ else
 	vim.keymap.set("v", "<M-y>", '"+y') -- Copy
 end
 
+vim.opt.backupcopy = "yes"
+
 require("config.lazy")
