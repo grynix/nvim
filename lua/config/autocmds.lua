@@ -76,3 +76,15 @@ vim.api.nvim_create_user_command("FormatIfNotTelescopeBuffer", formatNotTelescop
 vim.api.nvim_create_user_command("Cd", cd, {})
 vim.api.nvim_create_user_command("PresentationToggle", PresentationToggle, {})
 
+-- on insert leave
+-- vim.api.nvim_create_autocmd("InsertLeave", {
+-- 	callback = function()
+-- 		LazyVim.toggle.inlay_hints.set(false)
+-- 	end,
+-- })
+--
+-- vim.api.nvim_create_autocmd("InsertEnter", {
+-- 	callback = function()
+-- 		LazyVim.toggle.inlay_hints.set(true)
+-- 	end,
+-- })

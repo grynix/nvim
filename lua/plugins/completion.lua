@@ -65,11 +65,11 @@ return {
 						return item
 					end,
 				},
-				experimental = {
-					ghost_text = {
-						hl_group = "CmpGhostText",
-					},
-				},
+				-- experimental = {
+				-- 	ghost_text = {
+				-- 		hl_group = "CmpGhostText",
+				-- 	},
+				-- },
 				sorting = {
 					comperators = {
 						cmp.config.compare.exact,

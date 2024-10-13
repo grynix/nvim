@@ -36,6 +36,13 @@ function M.switch_path()
 	vim.api.nvim_buf_set_keymap(
 		buf,
 		"i",
+		"<leader>",
+		[[<cmd>lua require('config.custom.path-switcher').jump_to_new_path()<CR><esc>]],
+		{ noremap = true, silent = true }
+	)
+	vim.api.nvim_buf_set_keymap(
+		buf,
+		"i",
 		"<CR>",
 		[[<cmd>lua require('config.custom.path-switcher').jump_to_new_path()<CR><esc>]],
 		{ noremap = true, silent = true }

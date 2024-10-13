@@ -23,6 +23,7 @@ vim.keymap.set("n", "<F8>", "<cmd>AerialNavToggle<CR>")
 
 -- vim.api.nvim_set_keymap('i', '<esc>', format, { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('i', '<esc>', '<cmd>lua format_and_return_to_normal()<CR>', { noremap = true, silent = true })
+map("i", "<esc>", "<esc><right>", { desc = "Leave insert mode" })
 
 map("n", "<M-s>", "<cmd>w<cr>", { desc = "Save file" })
 map("i", "<M-s>", "<cmd>w<cr>", { desc = "Save file" })
@@ -89,7 +90,7 @@ map("v", "<M-o>", "d2P", { desc = "Duplicate current line" })
 map("v", "<C-p>", "p", { desc = "Paste and change the register for what we replaced" })
 map("v", "p", '"_xP', { desc = "Paste without changing the register" })
 
-map("n", "J", "i<CR><CR><UP><TAB><C-o>", { desc = "enter" })
+-- map("n", "J", "i<CR><CR><UP><TAB><C-o>", { desc = "enter" })
 
 -- 'a' registry
 map("n", "<M-t>", 'v"aiwp', { desc = "Paste the current word from 'a' registry" })
