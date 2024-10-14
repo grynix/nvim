@@ -87,8 +87,8 @@ map("v", "<M-o>", "d2P", { desc = "Duplicate current line" })
 
 -- map("n", "<M-p>", "a<CR><CR><UP><C-o>p<ESC><cmd>LazyFormat<CR>", { desc = "Paste after in new line" })
 
-map("v", "<C-p>", "p", { desc = "Paste and change the register for what we replaced" })
-map("v", "p", '"_xP', { desc = "Paste without changing the register" })
+map("v", "p", "P", { desc = "Paste Paste changing the register" })
+map("v", "P", "p", { desc = "Paste and change the register for what we replaced" })
 
 -- map("n", "J", "i<CR><CR><UP><TAB><C-o>", { desc = "enter" })
 
@@ -97,12 +97,12 @@ map("n", "<M-t>", 'v"aiwp', { desc = "Paste the current word from 'a' registry" 
 -- map("n", "<M-y>", '"ayiw', { desc = "Yank word into 'a' registry" })
 -- map("v", "<M-y>", '"ay', { desc = "Yank into 'a' registry" })
 
-map("n", "x", '"_x', { desc = "x into 'b' buffer" })
+map("n", "x", '"_x', { desc = "x into '_' buffer" })
 map("n", "X", "viwp", { desc = "Replace the current word with content from regular registry" })
-map("v", "x", '"_x', { desc = "x into 'b' buffer" })
+map("v", "x", '"_x', { desc = "x into '_' buffer" })
 
 -- Spectre / word search
-map("n", "<M-f>g", "<cmd>GrugFar<cr>", { desc = "Search current word globally" })
+map("n", "<M-f>g", "<cmd>GrugFar<cr>", { desc = "Search globally" })
 
 map("n", "<M-f>b", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Telescope in current buffer" })
 
