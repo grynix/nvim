@@ -27,3 +27,4 @@ vim.g.VM_theme = "paper"
 vim.opt.conceallevel = 0
 
 vim.g.snacks_animate = false
+vim.g.ai_cmp = false
