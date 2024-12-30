@@ -134,6 +134,7 @@ return {
 
 					-- Lsp
 					LspInlayHint = { bg = colors.surface0, fg = colors.overlay1, style = { "italic" } },
+					SupermavenSuggestion = { fg = "#7b818a" },
 				}
 			end,
 		},
