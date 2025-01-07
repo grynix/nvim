@@ -8,15 +8,7 @@ end
 map("n", "j", "j", { silent = true })
 map("n", "k", "k", { silent = true })
 
--- Define the global format function
--- HACK: is this still being used?
-_G.conform_format_on_leave = function()
-	-- NOTE: if this is changed to:
-	-- require("lazyvim.util").format({ force = true })
-	-- the {} will break, do not change it to that
-	require("conform").format({ async = true, lsp_fallback = true })
-end
-vim.keymap.set("n", "<F8>", "<cmd>AerialNavToggle<CR>")
+map("n", "<F8>", "<cmd>AerialNavToggle<CR>")
 
 --  vim.keymap.set('n', '<leader>cz', format, { noremap = true, silent = true })
 --  vim.cmd [[ autocmd InsertLeave * lua on_insert_leave() ]]
@@ -226,7 +218,6 @@ vim.api.nvim_set_keymap(
 	{}
 )
 
-require("config.custom.path-switcher")
 vim.api.nvim_set_keymap(
 	"n",
 	"ge",
