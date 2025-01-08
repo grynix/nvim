@@ -4,6 +4,8 @@ return {
 	---@type Flash.Config
 	opts = {},
 	keys = {
+		{ "s", mode = { "n", "o", "x" }, false },
+		{ "S", mode = { "n", "o", "x" }, false },
 		{
 			".",
 			mode = { "n", "o", "x" },
