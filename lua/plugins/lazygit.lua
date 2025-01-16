@@ -1,6 +1,6 @@
 return {
-	"kdheepak/lazygit.nvim",
-	requires = {
-		"nvim-lua/plenary.nvim",
-	},
+	-- "kdheepak/lazygit.nvim",
+	-- requires = {
+	-- 	"nvim-lua/plenary.nvim",
+	-- },
 }

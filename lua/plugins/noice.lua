@@ -6,5 +6,5 @@ return {
 			view = "cmdline",
 		},
 	},
-	throttle = 900 / 30,
+	-- throttle = 900 / 30,
 }

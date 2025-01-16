@@ -1,5 +1,7 @@
 return {
 	"echasnovski/mini.bufremove",
+	lazy = true,
+	event = "VeryLazy",
 	keys = function()
 		return {
 			{

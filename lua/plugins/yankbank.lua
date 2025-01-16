@@ -2,7 +2,7 @@
 -- if yankbank is not good
 return {
 	"ptdewey/yankbank-nvim",
-	config = function()
+	opts = function()
 		require("yankbank").setup()
 	end,
 }
