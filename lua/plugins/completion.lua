@@ -10,7 +10,6 @@ return {
 		opts = function()
 			vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
 			local cmp = require("cmp")
-			local compare = cmp.config.compare
 			return {
 				preselect = cmp.PreselectMode.Item,
 				completion = {
@@ -34,7 +33,6 @@ return {
 					end,
 				}),
 				sources = cmp.config.sources({
-					{ name = "codeium" },
 					{ name = "luasnip", keyword_length = 2 },
 					{ name = "nvim_lsp", keyword_length = 3 },
 					{
