@@ -224,3 +224,5 @@ vim.api.nvim_set_keymap(
 	"<cmd>lua require('config.custom.path-switcher').switch_path()<cr>",
 	{ noremap = true, silent = true }
 )
+
+map("n", "<leader>fs", ":Oil<cr>", { noremap = true, silent = true })

@@ -15,6 +15,8 @@ return {
 				end)
 			end,
 			["gu"] = "actions.parent",
+			["q"] = "actions.close",
+			["<BS>"] = "actions.parent",
 		},
 	},
 	-- Optional dependencies
