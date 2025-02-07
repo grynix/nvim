@@ -12,6 +12,7 @@
     "lazyvim.plugins.extras.lang.typescript",
     "lazyvim.plugins.extras.test.core",
     "lazyvim.plugins.extras.util.rest"
+    "lazyvim.plugins.extras.ui.mini-indentscope"
   ],
   "news": {
     "NEWS.md": "10960"
