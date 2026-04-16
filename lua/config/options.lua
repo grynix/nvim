@@ -20,7 +20,12 @@ vim.opt.expandtab = false
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.clipboard = ""
+vim.opt.tabstop = 2 -- visual width for existing tab chars
+vim.opt.softtabstop = 2 -- how many spaces a Tab feels like while editing
+vim.opt.shiftwidth = 2 -- indentation width for >>, <<, ==, autoindent
+vim.opt.expandtab = true -- insert spaces instead of tabs
 
+vim.opt.cmdheight = 1
 vim.opt.relativenumber = false
 
 vim.opt.scrolloff = 5
