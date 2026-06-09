@@ -36,3 +36,8 @@ vim.opt.conceallevel = 0
 vim.g.snacks_animate = false
 vim.g.ai_cmp = false
 vim.g.lazyvim_cmp = "nvim-cmp"
+
+-- Project root detection: always use the directory Neovim was opened in (cwd),
+-- instead of dynamically inferring it from markers like package.json/.git/lua
+-- or LSP roots. This keeps the root stable when working inside monorepos.
+vim.g.root_spec = { "cwd" }
