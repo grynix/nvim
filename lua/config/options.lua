@@ -37,7 +37,8 @@ vim.g.snacks_animate = false
 vim.g.ai_cmp = false
 vim.g.lazyvim_cmp = "nvim-cmp"
 
--- Project root detection: always use the directory Neovim was opened in (cwd),
--- instead of dynamically inferring it from markers like package.json/.git/lua
--- or LSP roots. This keeps the root stable when working inside monorepos.
-vim.g.root_spec = { "cwd" }
+-- Project root detection: anchor to the monorepo's single .git directory,
+-- falling back to the directory Neovim was opened in (cwd). This avoids
+-- LazyVim's default behavior of inferring the root from per-package markers
+-- like package.json or from LSP roots, which fragments the root in monorepos.
+vim.g.root_spec = { ".git", "cwd" }
