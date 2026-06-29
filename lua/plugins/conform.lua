@@ -36,14 +36,12 @@ return {
 			},
 			typescript = {
 				"prettierd",
-				"prettier",
-				stop_after_first = true,
+				"eslint_d",
 				-- { "eslint_d", "eslint", stop_after_first = true },
 			},
 			typescriptreact = {
 				"prettierd",
-				"prettier",
-				stop_after_first = true,
+				"eslint_d",
 				-- { "eslint_d", "eslint", stop_after_first = true },
 			},
 			-- vue = { { "prettierd", "prettier" }, { "eslint_d", "eslint" } },
