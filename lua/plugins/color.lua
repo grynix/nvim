@@ -3,7 +3,9 @@ return {
 	-- tokyonight default first and catppuccin second (double colorscheme work).
 	{
 		"LazyVim/LazyVim",
-		opts = { colorscheme = "catppuccin" },
+		-- flavour-specific name: only the plugin provides "catppuccin-mocha",
+		-- so a stray colors/catppuccin.vim elsewhere in rtp can't shadow it
+		opts = { colorscheme = "catppuccin-mocha" },
 	},
 	{
 		"catppuccin/nvim",
