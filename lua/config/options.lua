@@ -13,10 +13,6 @@ vim.opt.guicursor = {
 vim.o.guifont = "JetBrainsMono Nerd Font Mono:h16"
 vim.g.neovide_scale_factor = 1.0
 
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 0
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = false
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.clipboard = ""
@@ -42,3 +38,10 @@ vim.g.lazyvim_cmp = "nvim-cmp"
 -- LazyVim's default behavior of inferring the root from per-package markers
 -- like package.json or from LSP roots, which fragments the root in monorepos.
 vim.g.root_spec = { ".git", "cwd" }
+
+-- Nothing in this config uses remote-plugin providers (no rplugin manifest);
+-- disabling them avoids synchronous external probes from has('python3') etc.
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_node_provider = 0

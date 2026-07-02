@@ -49,6 +49,9 @@ require("lazy").setup({
 				"gzip",
 				-- "matchit",
 				-- "matchparen",
+				-- netrwPlugin stays enabled: oil has default_file_explorer=false and
+				-- neo-tree has hijack_netrw_behavior="disabled", so netrw is still
+				-- the only handler for `nvim <dir>` / `:e <dir>`
 				-- "netrwPlugin",
 				"tarPlugin",
 				"tohtml",
@@ -60,5 +63,9 @@ require("lazy").setup({
 	checker = {
 		enabled = true,
 		notify = false,
+		-- check for updates at most once a day with a single git process,
+		-- instead of ~70 git fetches every hour
+		frequency = 86400,
+		concurrency = 1,
 	},
 })

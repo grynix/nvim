@@ -1,5 +1,6 @@
 return {
 	"nvim-neo-tree/neo-tree.nvim",
+	cmd = "Neotree",
 	opts = {
 		filesystem = {
 			-- hijack_netrw_behavior = "open_default",

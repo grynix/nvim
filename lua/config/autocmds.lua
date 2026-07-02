@@ -4,7 +4,24 @@
 
 -- Set up the autocommand to run the function when leaving insert mode
 -- vim.cmd([[ autocmd InsertLeave * lua _G.conform_format_on_leave() ]])
-vim.cmd([[ autocmd BufLeave * silent! update]])
+
+-- Autosave on BufLeave, but only for real, modified file buffers. The guards
+-- keep :update away from special buffers (oil, telescope, neogit, terminals),
+-- where BufWriteCmd side effects would fire — e.g. oil would silently apply
+-- pending file operations just because you left its buffer.
+vim.api.nvim_create_autocmd("BufLeave", {
+	group = vim.api.nvim_create_augroup("autosave_on_leave", { clear = true }),
+	callback = function(ev)
+		if
+			vim.bo[ev.buf].buftype == ""
+			and vim.bo[ev.buf].modifiable
+			and vim.bo[ev.buf].modified
+			and vim.api.nvim_buf_get_name(ev.buf) ~= ""
+		then
+			vim.cmd("silent! update")
+		end
+	end,
+})
 
 local function create_prettierrc()
 	local prettierrc_path = vim.fn.getcwd() .. "/.prettierrc"

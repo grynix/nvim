@@ -2,6 +2,12 @@ return {
 	"ThePrimeagen/harpoon",
 	branch = "harpoon2",
 	dependencies = { "nvim-lua/plenary.nvim" },
+	-- lazy-load triggers; the real mappings are created in opts() below on first press
+	keys = {
+		{ "<Leader><CR>", desc = "Harpoon Add Mark" },
+		{ "<F2>", desc = "Harpoon Marks Menu" },
+		{ "<F1>", desc = "Harpoon Cmd Menu" },
+	},
 	opts = function()
 		local harpoon = require("harpoon")
 

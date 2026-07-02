@@ -1,8 +1,17 @@
 return {
 	"sindrets/diffview.nvim",
+	cmd = {
+		"DiffviewOpen",
+		"DiffviewFileHistory",
+		"DiffviewClose",
+		"DiffviewToggleFiles",
+		"DiffviewFocusFiles",
+		"DiffviewRefresh",
+		"DiffviewLog",
+	},
 	opts = function()
 		local actions = require("diffview.actions")
-		require("diffview").setup({
+		return {
 			diff_binaries = false, -- Show diffs for binaries
 			enhanced_diff_hl = false, -- See ':h diffview-config-enhanced_diff_hl'
 			git_cmd = { "git" }, -- The git executable followed by default args.
@@ -536,6 +545,6 @@ return {
 					{ "n", "<esc>", actions.close, { desc = "Close help menu" } },
 				},
 			},
-		})
+		}
 	end,
 }

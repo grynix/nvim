@@ -1,5 +1,7 @@
 return {
 	"rcarriga/nvim-notify",
+	-- loads on require("notify"), i.e. when noice first renders a notification
+	lazy = true,
 	opts = {
 		stages = "slide",
 		timeout = 2500,

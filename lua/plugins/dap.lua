@@ -1,20 +1,27 @@
 return {
 	"mfussenegger/nvim-dap",
-	lazy = true,
-	event = "VeryLazy",
+	-- no VeryLazy: LazyVim's dap.core extra already lazy-loads the whole DAP
+	-- stack on its <leader>d* keys; these cmds cover direct command usage too
+	cmd = {
+		"DapNew",
+		"DapContinue",
+		"DapToggleBreakpoint",
+		"DapClearBreakpoints",
+		"DapEval",
+		"DapDisconnect",
+		"DapPause",
+		"DapRestartFrame",
+		"DapSetLogLevel",
+		"DapShowLog",
+		"DapStepInto",
+		"DapStepOut",
+		"DapStepOver",
+		"DapTerminate",
+		"DapToggleRepl",
+	},
 	dependencies = {
 		{
 			"rcarriga/nvim-dap-ui",
-			keys = {
-				{
-					"J",
-					function()
-						require("dapui").eval()
-					end,
-					desc = "Eval",
-					mode = { "n", "v" },
-				},
-			},
 			opts = {
 				layouts = {
 					{
