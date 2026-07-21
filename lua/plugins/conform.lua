@@ -22,6 +22,9 @@ return {
 			fish = { "fish_indent" },
 			sh = { "shfmt" },
 			go = { "gofumpt", "goimports-reviser", "goimports" },
+			css = {
+				"prettier",
+			},
 			javascript = {
 				"prettierd",
 				"prettier",
