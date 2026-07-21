@@ -22,6 +22,16 @@ return {
 	dependencies = {
 		{
 			"rcarriga/nvim-dap-ui",
+			keys = {
+				{
+					"J",
+					function()
+						require("dapui").eval()
+					end,
+					desc = "Eval",
+					mode = { "n", "v" },
+				},
+			},
 			opts = {
 				layouts = {
 					{
