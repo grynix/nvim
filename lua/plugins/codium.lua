@@ -2,7 +2,9 @@ return {
 	-- add this to the file where you setup your other plugins:
 	{
 		"monkoose/neocodeium",
-		event = "VeryLazy",
+		-- InsertEnter instead of VeryLazy: avoids spawning the codeium server
+		-- in sessions where you never enter insert mode
+		event = "InsertEnter",
 		config = function()
 			if os.getenv("USER") == "hu901184" then
 				return

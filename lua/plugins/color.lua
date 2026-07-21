@@ -1,7 +1,16 @@
 return {
+	-- Tell LazyVim which colorscheme to apply, so it doesn't load+apply its
+	-- tokyonight default first and catppuccin second (double colorscheme work).
+	{
+		"LazyVim/LazyVim",
+		-- flavour-specific name: only the plugin provides "catppuccin-mocha",
+		-- so a stray colors/catppuccin.vim elsewhere in rtp can't shadow it
+		opts = { colorscheme = "catppuccin-mocha" },
+	},
 	{
 		"catppuccin/nvim",
-		lazy = false,
+		-- lazy: LazyVim's colorscheme call loads it (with these opts) at the right time
+		lazy = true,
 		name = "catppuccin",
 		priority = 1000,
 		opts = {
@@ -160,9 +169,5 @@ return {
 				}
 			end,
 		},
-		config = function(_, opts)
-			require("catppuccin").setup(opts)
-			vim.cmd.colorscheme("catppuccin")
-		end,
 	},
 }

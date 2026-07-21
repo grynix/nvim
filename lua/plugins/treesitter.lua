@@ -1,15 +1,20 @@
 return {
+	-- nvim-treesitter's main branch (what LazyVim now uses) dropped the module
+	-- system entirely, so it has no incremental selection. treesitter-modules.nvim
+	-- re-implements that module for the main branch. Loaded on file open (not at
+	-- startup) so it stays off the startup path.
 	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
+		"MeanderingProgrammer/treesitter-modules.nvim",
+		event = { "LazyFile", "VeryLazy" },
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		opts = {
 			incremental_selection = {
 				enable = true,
 				keymaps = {
-					init_selection = "<CR>",
-					node_incremental = "<CR>",
+					init_selection = "<CR>", -- normal mode: start selection
+					node_incremental = "<CR>", -- visual: grow to parent node
 					scope_incremental = false,
-					node_decremental = "<bs>",
+					node_decremental = "<bs>", -- visual: shrink to child node
 				},
 			},
 		},
@@ -27,23 +32,6 @@ return {
 			separator = nil,
 			zindex = 20,
 			on_attach = nil,
-		},
-		{
-			{
-				"MeanderingProgrammer/treesitter-modules.nvim",
-				dependencies = { "nvim-treesitter/nvim-treesitter" },
-				opts = {
-					incremental_selection = {
-						enable = true,
-						keymaps = {
-							init_selection = "<CR>",
-							node_incremental = "<CR>",
-							scope_incremental = false,
-							node_decremental = "<bs>",
-						},
-					},
-				},
-			},
 		},
 	},
 }

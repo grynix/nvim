@@ -1,7 +1,5 @@
 return {
 	"nvim-mini/mini.bufremove",
-	lazy = true,
-	event = "VeryLazy",
 	keys = function()
 		return {
 			{
