@@ -221,6 +221,17 @@ return {
 					webRoot = "${workspaceFolder}",
 				},
 				{
+					type = "pwa-node",
+					request = "attach",
+					name = "Attach to port (pwa-node)",
+					cwd = vim.fn.getcwd(),
+					sourceMaps = true,
+					skipFiles = { "<node_internals>/**", "node_modules/**" },
+					port = function()
+						return vim.fn.input("Port: ", 9229)
+					end,
+				},
+				{
 					name = "Launch via NPM",
 					type = "node2",
 					request = "launch",
